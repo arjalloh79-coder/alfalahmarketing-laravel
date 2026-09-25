@@ -3,6 +3,10 @@
 @section('title', 'Content Creation & Social Media — Al-Falah')
 @section('description', 'Social media content planning, creation and weekly publishing for SMBs in Guinea, Sierra Leone and the USA.')
 
+@push('jsonld')
+{!! \App\Support\Seo::jsonLd(\App\Support\Seo::service('Content Creation', 'Social media content planning, creation and weekly publishing for SMBs in Guinea, Sierra Leone and the USA.')) !!}
+@endpush
+
 @section('styles')
 <style>
     .service-card {

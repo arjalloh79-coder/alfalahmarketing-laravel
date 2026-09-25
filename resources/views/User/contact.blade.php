@@ -3,6 +3,10 @@
 @section('title', 'Contact Al-Falah Marketing — Conakry & USA')
 @section('description', 'Contact Al-Falah Marketing in Conakry, Guinea or Laurel, USA. Reach us by WhatsApp, phone or email — bilingual FR/EN support.')
 
+@push('jsonld')
+{!! \App\Support\Seo::jsonLd(\App\Support\Seo::organization()) !!}
+@endpush
+
 @section('main-section')
 
 

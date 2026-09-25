@@ -19,7 +19,28 @@
         $canonical = trim($__env->yieldContent('canonical')) ?: e(url()->current());
         $ogImage = trim($__env->yieldContent('og_image')) ?: e(asset('assets/images/og-default.jpg'));
         $ogType = trim($__env->yieldContent('og_type')) ?: 'website';
+
+        // Auto BreadcrumbList for every page except Home — no per-page
+        // work needed. Service subpages and the blog post page get a
+        // 3-level trail (Home > section > page); everything else gets
+        // Home > page.
+        $routeName = request()->route()?->getName();
+        $currentLabel = html_entity_decode($ogTitle, ENT_QUOTES);
+        if ($routeName && $routeName !== 'home') {
+            $breadcrumbItems = ['Home' => route('home')];
+            if (str_starts_with($routeName, 'services.')) {
+                $breadcrumbItems['Services'] = route('service');
+            } elseif ($routeName === 'blog.show') {
+                $breadcrumbItems['Blog'] = route('blog');
+            }
+            $breadcrumbItems[$currentLabel] = null;
+        }
     @endphp
+    @if (!empty($breadcrumbItems))
+        @push('jsonld')
+            {!! \App\Support\Seo::jsonLd(\App\Support\Seo::breadcrumbs($breadcrumbItems)) !!}
+        @endpush
+    @endif
     <link rel="canonical" href="{!! $canonical !!}">
 
     <!-- Open Graph -->

@@ -3,6 +3,10 @@
 @section('title', 'Logo & Brand Identity Design — Al-Falah Marketing')
 @section('description', 'Logo design and brand identity systems for small businesses in Guinea, Sierra Leone and the USA.')
 
+@push('jsonld')
+{!! \App\Support\Seo::jsonLd(\App\Support\Seo::service('Branding & Design', 'Logo design and brand identity systems for small businesses in Guinea, Sierra Leone and the USA.')) !!}
+@endpush
+
 @section('styles')
 <style>
     .service-card {

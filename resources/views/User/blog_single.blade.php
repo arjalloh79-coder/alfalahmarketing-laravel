@@ -5,6 +5,10 @@
 @section('og_type', 'article')
 @section('og_image', asset('storage/public/' . $blog->image))
 
+@push('jsonld')
+{!! \App\Support\Seo::jsonLd(\App\Support\Seo::article($blog)) !!}
+@endpush
+
 @section('main-section')
 <article class="pt-32 pb-20">
     <div class="max-w-4xl mx-auto px-4">

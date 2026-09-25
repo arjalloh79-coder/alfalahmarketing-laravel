@@ -5,6 +5,7 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
 
+use App\Http\Middleware\SecurityHeaders;
 use App\Http\Middleware\SetLocale;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -23,6 +24,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // Apply SetLocale middleware to all web routes
         $middleware->web(append: [
             SetLocale::class,
+            SecurityHeaders::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

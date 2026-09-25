@@ -29,6 +29,34 @@
     
     
 </IfModule>
+# Security headers (also set by App\Http\Middleware\SecurityHeaders for
+# Laravel pages, in case these don't apply to PHP responses on this host)
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
+</IfModule>
+
+# Browser caching for static files
+<IfModule mod_headers.c>
+    # Vite build output has a content hash in every filename, so it can be
+    # cached forever — a new build produces new filenames.
+    <If "%{REQUEST_URI} =~ m#/build/assets/#">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </If>
+    <ElseIf "%{REQUEST_URI} =~ m#\.(jpe?g|png|gif|webp|avif|svg|ico|woff2?|ttf|otf|eot)$#i">
+        Header set Cache-Control "public, max-age=2592000"
+    </ElseIf>
+    <ElseIf "%{REQUEST_URI} =~ m#\.(css|js)$#i">
+        # Unversioned CSS/JS (assets/css, assets/js): shorter, so edits show up
+        Header set Cache-Control "public, max-age=604800"
+    </ElseIf>
+</IfModule>
+
 # Block .env file access
 <Files ".env">
     Require all denied

@@ -1,15 +1,40 @@
 <!DOCTYPE html>
-<html lang="{{ (isset($_COOKIE['lang']) && in_array($_COOKIE['lang'], ['en', 'fr'])) ? $_COOKIE['lang'] : 'en' }}">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Digital Marketing Agency - Transform Your Brand')</title>
+    <meta name="description" content="{{ trim($__env->yieldContent('description', 'Web design, SEO, ads & AI automation for SMBs in Guinea, Sierra Leone and the USA. Bilingual FR/EN team.')) }}">
+    @yield('robots')
+    @php
+        $ogTitle = trim($__env->yieldContent('og_title')) ?: trim($__env->yieldContent('title', 'Digital Marketing Agency - Transform Your Brand'));
+        $ogDescription = trim($__env->yieldContent('og_description')) ?: trim($__env->yieldContent('description', 'Web design, SEO, ads & AI automation for SMBs in Guinea, Sierra Leone and the USA. Bilingual FR/EN team.'));
+        $canonical = trim($__env->yieldContent('canonical')) ?: url()->current();
+        $ogImage = trim($__env->yieldContent('og_image')) ?: asset('assets/images/og-default.jpg');
+        $ogType = trim($__env->yieldContent('og_type')) ?: 'website';
+    @endphp
+    <link rel="canonical" href="{{ $canonical }}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ $ogTitle }}">
+    <meta property="og:description" content="{{ $ogDescription }}">
+    <meta property="og:image" content="{{ $ogImage }}">
+    <meta property="og:url" content="{{ $canonical }}">
+    <meta property="og:type" content="{{ $ogType }}">
+    <meta property="og:site_name" content="Al-Falah Marketing">
+    <meta property="og:locale" content="{{ app()->getLocale() === 'fr' ? 'fr_GN' : 'en_US' }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $ogTitle }}">
+    <meta name="twitter:description" content="{{ $ogDescription }}">
+    <meta name="twitter:image" content="{{ $ogImage }}">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="{{ asset('assets/images/alfalah.webp') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/images/alfalah.webp') }}">
-    <link rel="apple-touch-icon" href="{{ asset('assets/images/alfalah.webp') }}">
-    
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicon-32x32.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/apple-touch-icon.png') }}">
+
     <!-- Google Fonts - Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,6 +140,8 @@
     </style>
     
     @yield('styles')
+
+    @stack('jsonld')
 </head>
 <body class="antialiased">
     

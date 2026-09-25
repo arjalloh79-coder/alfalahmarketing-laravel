@@ -12,10 +12,12 @@ use App\Http\Controllers\Admin\DomainController;
 use App\Http\Controllers\User\UserDomainController;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\SitemapController;
 
 
 
 Route::get('/', [UserController::class, 'index'])->name('home');
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('/about-us', [UserController::class, 'about'])->name('about');
 Route::get('/services', [UserController::class, 'service'])->name('service');
 Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');

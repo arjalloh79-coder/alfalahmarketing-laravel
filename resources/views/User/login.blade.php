@@ -1,6 +1,9 @@
 @extends('User.main')
 
 @section('title', 'Login - Al-Falah Digital Marketing')
+@section('robots')
+<meta name="robots" content="noindex,follow">
+@endsection
 
 @section('main-section')
 

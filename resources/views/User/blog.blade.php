@@ -2,6 +2,11 @@
 
 @section('title', 'Marketing & AI Insights — Al-Falah Blog')
 @section('description', 'Marketing, web development and AI automation insights from Al-Falah Marketing, for SMBs in Guinea, Sierra Leone and the USA.')
+@if(request('category') || request('page'))
+@section('robots')
+<meta name="robots" content="noindex,follow">
+@endsection
+@endif
 
 @section('main-section')
 

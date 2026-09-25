@@ -1,6 +1,7 @@
 @extends('User.main')
 
-@section('title', 'About Us - Al-Falah Digital Marketing Agency')
+@section('title', 'About Al-Falah Marketing — Our Story & Founder')
+@section('description', 'Meet Al-Falah Marketing, founded by Abdulrahman Jalloh: web development, digital marketing and AI automation for SMBs in Guinea, Sierra Leone & the USA.')
 
 @section('main-section')
 

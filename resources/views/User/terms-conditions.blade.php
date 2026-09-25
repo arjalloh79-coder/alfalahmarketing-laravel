@@ -1,6 +1,7 @@
 @extends('User.main')
 
 @section('title', 'Terms & Conditions - Al-Falah Digital Marketing Agency')
+@section('description', "Al-Falah Marketing's terms and conditions for using our website and services.")
 
 @section('styles')
 <style>

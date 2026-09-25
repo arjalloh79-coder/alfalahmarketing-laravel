@@ -1,6 +1,7 @@
 @extends('User.main')
 
 @section('title', 'Privacy Policy - Al-Falah Digital Marketing Agency')
+@section('description', "Al-Falah Marketing's privacy policy: how we collect, use and protect your information.")
 
 @section('styles')
 <style>

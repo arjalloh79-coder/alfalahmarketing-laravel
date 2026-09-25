@@ -1,6 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Success Stories & Portfolio - Al-Falah Digital Marketing')
+@section('title', 'Our Work: Client Projects — Al-Falah Marketing')
+@section('description', 'See recent web, marketing and branding projects Al-Falah Marketing has delivered for clients in Guinea, Sierra Leone and the USA.')
 
 @section('main-section')
 

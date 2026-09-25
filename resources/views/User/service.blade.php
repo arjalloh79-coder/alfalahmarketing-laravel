@@ -1,6 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Our Services - Al-Falah Digital Marketing Agency')
+@section('title', 'Web, Marketing & AI Services for SMBs — Al-Falah')
+@section('description', 'Web development, digital marketing, branding, automation, content creation and IT solutions for SMBs in Guinea, Sierra Leone and the USA.')
 
 <!-- Include Swiper.js for the Slider -->
 @section('styles')

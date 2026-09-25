@@ -1,6 +1,11 @@
 @extends('User.main')
 
 @section('title', 'AI Chatbots & Business Automation — Al-Falah')
+@section('description', 'AI chatbots, WhatsApp sales assistants and CRM automation that save SMBs time in Guinea, Sierra Leone and the USA.')
+
+@push('jsonld')
+{!! \App\Support\Seo::jsonLd(\App\Support\Seo::service('AI Chatbots & Business Automation', 'AI chatbots, WhatsApp sales assistants and CRM automation that save SMBs time in Guinea, Sierra Leone and the USA.')) !!}
+@endpush
 
 @section('styles')
 <style>

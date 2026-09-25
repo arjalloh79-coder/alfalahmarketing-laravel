@@ -1,6 +1,11 @@
 @extends('User.main')
 
-@section('title', 'IT Solutions Services - Al-Falah Digital Marketing Agency')
+@section('title', 'IT Support, Hosting & Security — Al-Falah')
+@section('description', 'IT support, hosting and security services for small and growing businesses in Guinea, Sierra Leone and the USA.')
+
+@push('jsonld')
+{!! \App\Support\Seo::jsonLd(\App\Support\Seo::service('IT Solutions', 'IT support, hosting and security services for small and growing businesses in Guinea, Sierra Leone and the USA.')) !!}
+@endpush
 
 @section('styles')
 <style>

@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /login
+Disallow: /dashboard
+Disallow: /admin
+
+Sitemap: https://al-falahmarketing.com/sitemap.xml

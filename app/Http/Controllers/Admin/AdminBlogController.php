@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Support\ImageOptimizer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -28,7 +29,7 @@ class AdminBlogController extends Controller
         ]);
 
         if($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('blogs', 'public');
+            $data['image'] = ImageOptimizer::toWebp($request->file('image')->store('blogs', 'public'));
         }
 
         $data['is_featured'] = $request->has('is_featured');

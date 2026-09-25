@@ -30,7 +30,7 @@
         <div class="flex items-center justify-between h-20">
             <!-- Logo -->
             <a href="{{ route('home') }}" class="flex items-center space-x-3 group">
-                <img src="{{ asset('assets/images/alfalah.webp') }}" alt="Al-Falah Marketing Logo"
+                <img src="{{ asset('assets/images/alfalah.webp') }}" alt="Al-Falah Marketing Logo" width="1408" height="792" fetchpriority="high" decoding="async"
                     class="h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105">
 
                 <div>

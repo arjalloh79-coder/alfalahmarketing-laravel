@@ -6,7 +6,7 @@
             <div>
                 <div class="flex items-center space-x-2 mb-6">
                     <div class="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center">
-                        <img src="{{ asset('assets/images/alfalah.webp') }}" alt="Al-Falah Marketing Logo"
+                        <img src="{{ asset('assets/images/alfalah.webp') }}" alt="Al-Falah Marketing Logo" width="1408" height="792" loading="lazy" decoding="async"
                             class="w-full h-full object-contain">
                     </div>
 

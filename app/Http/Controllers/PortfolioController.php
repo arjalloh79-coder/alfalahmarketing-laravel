@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
+use App\Support\ImageOptimizer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -45,7 +46,7 @@ class PortfolioController extends Controller
 
         // इमेज अपलोड हैंडलिंग
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('portfolios', 'public');
+            $imagePath = ImageOptimizer::toWebp($request->file('image')->store('portfolios', 'public'));
         }
 
         Portfolio::create([

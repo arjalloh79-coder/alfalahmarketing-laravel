@@ -56,7 +56,7 @@
 
                     <!-- Aspect ratio fixed to 4/3 for crisp and compact image container -->
                     <div class="relative overflow-hidden rounded-xl bg-slate-100 aspect-[4/3]">
-                        <img src="{{ asset('storage/public/' . $project->image) }}" alt="{{ $project->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <img src="{{ asset('storage/public/' . $project->image) }}" loading="lazy" decoding="async" alt="{{ $project->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
 
                         <!-- Results Badge Metrics Element -->
                         <div class="absolute top-4 left-4 z-10">

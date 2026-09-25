@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="relative">
-                <img src="{{ asset('public/assets/images/team.jpg') }}" alt="Collaborative Work" class="rounded-lg shadow-2xl w-full">
+                <img src="{{ asset('assets/images/team.webp') }}" width="1200" height="655" loading="lazy" decoding="async" alt="Collaborative Work" class="rounded-lg shadow-2xl w-full">
                 <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl hidden md:block">
                     <p class="text-primary font-bold text-4xl">100%</p>
                     <p class="text-gray-600 text-sm uppercase font-semibold">Commitment to Growth</p>
@@ -178,7 +178,7 @@
             <div class="order-1 lg:order-2 relative">
                 <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl border-8 border-muted">
                     <!-- Replace with actual founder image -->
-                    <img src="{{ asset('public/assets/images/founder.png') }}" alt="Abdulrahman Jalloh" class="w-full h-full object-cover">
+                    <img src="{{ asset('assets/images/founder.webp') }}" width="800" height="1000" loading="lazy" decoding="async" alt="Abdulrahman Jalloh" class="w-full h-full object-cover">
                 </div>
                 <div class="absolute -top-6 -right-6 w-32 h-32 bg-accent rounded-full -z-10 animate-pulse"></div>
                 <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-primary rounded-full -z-10"></div>

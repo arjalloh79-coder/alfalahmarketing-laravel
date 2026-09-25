@@ -62,7 +62,7 @@
             <!-- Hero Image/Illustration -->
             <div class="relative">
                 <div class="relative z-10">
-                    <img src="{{ asset('public/assets/images/reception.jpg') }}" alt="Marketing Dashboard" class="rounded-lg w-full">
+                    <img src="{{ asset('assets/images/reception.webp') }}" width="1200" height="655" fetchpriority="high" decoding="async" alt="Marketing Dashboard" class="rounded-lg w-full">
                 </div>
                 <!-- Decorative elements -->
                 <div class="absolute -top-6 -right-6 w-24 h-24 bg-accent rounded-lg"></div>
@@ -77,7 +77,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="relative">
-                <img src="{{ asset('public/assets/images/specialist.jpg') }}" alt="Team Meeting" class="rounded-lg w-full">
+                <img src="{{ asset('assets/images/specialist.webp') }}" width="1200" height="655" loading="lazy" decoding="async" alt="Team Meeting" class="rounded-lg w-full">
                 <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-primary rounded-lg hidden lg:block"></div>
                 <div class="absolute -top-8 -left-8 w-24 h-24 bg-secondary rounded-lg hidden lg:block"></div>
             </div>
@@ -304,7 +304,7 @@
 
                     <div class="relative overflow-hidden rounded-lg mb-6">
 
-                        <img src="{{ asset('storage/public/' . $project->image) }}"
+                        <img src="{{ asset('storage/public/' . $project->image) }}" loading="lazy" decoding="async"
                              alt="{{ $project->title }}"
                              class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
 
@@ -417,7 +417,7 @@
                         <div class="relative overflow-hidden aspect-[16/10]">
                             <!-- Blog Image -->
                             @if($blog->image)
-                                <img src="{{ asset('storage/public/' . $blog->image) }}" alt="{{ $blog->title }}" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
+                                <img src="{{ asset('storage/public/' . $blog->image) }}" loading="lazy" decoding="async" alt="{{ $blog->title }}" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
                             @else
                                 <div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">No Image</div>
                             @endif

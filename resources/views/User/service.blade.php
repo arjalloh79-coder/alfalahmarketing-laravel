@@ -243,7 +243,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <img src="{{ asset('public/assets/images/video.jpg') }}" alt="Marketing Strategy" class="rounded-2xl shadow-xl">
+                <img src="{{ asset('assets/images/video.webp') }}" width="1200" height="655" loading="lazy" decoding="async" alt="Marketing Strategy" class="rounded-2xl shadow-xl">
             </div>
             <div>
                 <div class="inline-block px-4 py-2 bg-muted rounded-md mb-6">

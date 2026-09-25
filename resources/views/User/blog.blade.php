@@ -1,6 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Insights & Blog - Al-Falah Digital Marketing')
+@section('title', 'Marketing & AI Insights — Al-Falah Blog')
+@section('description', 'Marketing, web development and AI automation insights from Al-Falah Marketing, for SMBs in Guinea, Sierra Leone and the USA.')
 
 @section('main-section')
 
@@ -61,7 +62,7 @@
                         {{ $featured->title }}
                     </h2>
                     <p class="text-gray-600 text-sm md:text-base lg:text-lg mb-6 md:mb-8">
-                        {{ Str::limit(strip_tags($featured->content), 160) }}
+                        {{ $featured->excerpt(160) }}
                     </p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-200">
                         <div class="flex items-center space-x-3">
@@ -105,7 +106,7 @@
                         {{ $blog->title }}
                     </h3>
                     <p class="text-gray-600 mb-6 line-clamp-3">
-                        {{ Str::limit(strip_tags($blog->content), 120) }}
+                        {{ $blog->excerpt(120) }}
                     </p>
                     <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
                         <span class="text-xs text-gray-400">{{ $blog->created_at->format('M d, Y') }}</span>

@@ -1,6 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Content Creation Services - Al-Falah Digital Marketing Agency')
+@section('title', 'Content Creation & Social Media — Al-Falah')
+@section('description', 'Social media content planning, creation and weekly publishing for SMBs in Guinea, Sierra Leone and the USA.')
 
 @section('styles')
 <style>

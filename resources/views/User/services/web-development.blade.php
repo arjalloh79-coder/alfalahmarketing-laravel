@@ -1,6 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Web Development Services - Al-Falah Digital Marketing Agency')
+@section('title', 'Website Design & Development — Al-Falah Marketing')
+@section('description', 'Custom, mobile-first website design and development for small and growing businesses in Guinea, Sierra Leone and the USA.')
 
 @section('styles')
 <style>

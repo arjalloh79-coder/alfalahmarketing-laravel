@@ -4,31 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Digital Marketing Agency - Transform Your Brand')</title>
-    <meta name="description" content="{{ trim($__env->yieldContent('description', 'Web design, SEO, ads & AI automation for SMBs in Guinea, Sierra Leone and the USA. Bilingual FR/EN team.')) }}">
+    <meta name="description" content="@yield('description', 'Web design, SEO, ads & AI automation for SMBs in Guinea, Sierra Leone and the USA. Bilingual FR/EN team.')">
     @yield('robots')
+    {{--
+        @section('name', 'literal string') auto-escapes its content (Laravel's
+        Factory::startSection does this), the same way the <title> @yield above
+        already relies on. So everything below is echoed raw with {!! !!} / @yield,
+        never {{ }} — wrapping already-escaped content in {{ }} would escape it
+        twice (e.g. "Guinea & USA" -> "Guinea &amp;amp; USA").
+    --}}
     @php
         $ogTitle = trim($__env->yieldContent('og_title')) ?: trim($__env->yieldContent('title', 'Digital Marketing Agency - Transform Your Brand'));
         $ogDescription = trim($__env->yieldContent('og_description')) ?: trim($__env->yieldContent('description', 'Web design, SEO, ads & AI automation for SMBs in Guinea, Sierra Leone and the USA. Bilingual FR/EN team.'));
-        $canonical = trim($__env->yieldContent('canonical')) ?: url()->current();
-        $ogImage = trim($__env->yieldContent('og_image')) ?: asset('assets/images/og-default.jpg');
+        $canonical = trim($__env->yieldContent('canonical')) ?: e(url()->current());
+        $ogImage = trim($__env->yieldContent('og_image')) ?: e(asset('assets/images/og-default.jpg'));
         $ogType = trim($__env->yieldContent('og_type')) ?: 'website';
     @endphp
-    <link rel="canonical" href="{{ $canonical }}">
+    <link rel="canonical" href="{!! $canonical !!}">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="{{ $ogTitle }}">
-    <meta property="og:description" content="{{ $ogDescription }}">
-    <meta property="og:image" content="{{ $ogImage }}">
-    <meta property="og:url" content="{{ $canonical }}">
-    <meta property="og:type" content="{{ $ogType }}">
+    <meta property="og:title" content="{!! $ogTitle !!}">
+    <meta property="og:description" content="{!! $ogDescription !!}">
+    <meta property="og:image" content="{!! $ogImage !!}">
+    <meta property="og:url" content="{!! $canonical !!}">
+    <meta property="og:type" content="{!! $ogType !!}">
     <meta property="og:site_name" content="Al-Falah Marketing">
     <meta property="og:locale" content="{{ app()->getLocale() === 'fr' ? 'fr_GN' : 'en_US' }}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $ogTitle }}">
-    <meta name="twitter:description" content="{{ $ogDescription }}">
-    <meta name="twitter:image" content="{{ $ogImage }}">
+    <meta name="twitter:title" content="{!! $ogTitle !!}">
+    <meta name="twitter:description" content="{!! $ogDescription !!}">
+    <meta name="twitter:image" content="{!! $ogImage !!}">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">

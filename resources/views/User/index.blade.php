@@ -1,6 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Al-Falah - Digital Marketing Agency')
+@section('title', 'Al-Falah Marketing — Digital Agency Guinea, Sierra Leone & USA')
+@section('description', 'Web design, SEO, ads & AI automation for SMBs in Guinea, Sierra Leone and the USA. Bilingual FR/EN team, WhatsApp-first support.')
 
 @section('main-section')
 

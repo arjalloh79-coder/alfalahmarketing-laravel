@@ -1,6 +1,7 @@
 @extends('User.main')
 
 @section('title', 'AI Chatbots & Business Automation — Al-Falah')
+@section('description', 'AI chatbots, WhatsApp sales assistants and CRM automation that save SMBs time in Guinea, Sierra Leone and the USA.')
 
 @section('styles')
 <style>

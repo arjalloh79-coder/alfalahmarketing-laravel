@@ -1,6 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Digital Marketing Services - Al-Falah Digital Marketing Agency')
+@section('title', 'SEO, Facebook & Google Ads — Al-Falah Marketing')
+@section('description', 'SEO, Facebook Ads and Google Ads campaigns built to bring real customers to SMBs in Guinea, Sierra Leone and the USA.')
 
 @section('styles')
 <style>

@@ -1,4 +1,10 @@
 @extends('User.main')
+
+@section('title', $blog->title . ' — Al-Falah Blog')
+@section('description', $blog->excerpt(155))
+@section('og_type', 'article')
+@section('og_image', asset('storage/public/' . $blog->image))
+
 @section('main-section')
 <article class="pt-32 pb-20">
     <div class="max-w-4xl mx-auto px-4">
@@ -16,7 +22,7 @@
             </div>
         </div>
 
-        <img src="{{ asset('storage/public/'.$blog->image) }}" class="w-full rounded-3xl mb-12 shadow-xl">
+        <img src="{{ asset('storage/public/'.$blog->image) }}" alt="{{ $blog->title }}" class="w-full rounded-3xl mb-12 shadow-xl">
 
         <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
             {!! nl2br(e($blog->content)) !!}

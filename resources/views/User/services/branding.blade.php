@@ -1,6 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Branding & Design Services - Al-Falah Digital Marketing Agency')
+@section('title', 'Logo & Brand Identity Design — Al-Falah Marketing')
+@section('description', 'Logo design and brand identity systems for small businesses in Guinea, Sierra Leone and the USA.')
 
 @section('styles')
 <style>

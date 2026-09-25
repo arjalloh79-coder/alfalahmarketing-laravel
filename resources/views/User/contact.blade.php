@@ -1,6 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Al-Falah - Digital Marketing Agency')
+@section('title', 'Contact Al-Falah Marketing — Conakry & USA')
+@section('description', 'Contact Al-Falah Marketing in Conakry, Guinea or Laurel, USA. Reach us by WhatsApp, phone or email — bilingual FR/EN support.')
 
 @section('main-section')
 
@@ -22,9 +23,9 @@
                     <span class="text-primary font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
                 </div>
                 
-                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-6 tracking-tighter">
+                <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-6 tracking-tighter">
                     Let's Grow Your Business Together
-                </h2>
+                </h1>
                 
                 <p class="text-xl text-gray-600 mb-8 leading-relaxed">
                     Ready to transform your digital presence? Get in touch with our team for a free consultation and custom strategy.

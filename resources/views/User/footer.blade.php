@@ -17,6 +17,9 @@
                 <p class="text-gray-400 mb-6 leading-relaxed">
                     Transform your brand with data-driven marketing strategies that deliver real results.
                 </p>
+                <div class="mb-6">
+                    @include('partials.contact-info', ['style' => 'dark'])
+                </div>
                 <div class="flex space-x-3">
                     <a href="https://www.facebook.com/profile.php?id=61573274222922"
                         class="w-10 h-10 bg-white/10 rounded-md flex items-center justify-center text-white hover:bg-primary hover:scale-110 transition-all duration-200">
@@ -130,7 +133,7 @@
 </footer>
 
 <!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/+12402806137?text=Hello Al-Falah Team, I'm interested in your services!" target="_blank"
+<a href="{{ \App\Support\Contact::whatsappUrl() }}" target="_blank"
     class="fixed bottom-8 left-8 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 z-50 group">
 
     <!-- Pulse Effect -->

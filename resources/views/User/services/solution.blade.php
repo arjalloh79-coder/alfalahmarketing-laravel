@@ -169,7 +169,7 @@
                             </div>
                             <div>
                                 <p class="text-white font-bold">Cloud Hosting</p>
-                                <p class="text-white/70 text-sm">99.9% Uptime Guarantee</p>
+                                <p class="text-white/70 text-sm">Reliable, Managed Hosting</p>
                             </div>
                         </div>
                         <div class="flex items-center space-x-4">
@@ -186,8 +186,8 @@
                                 <i class="fas fa-headset text-white text-xl"></i>
                             </div>
                             <div>
-                                <p class="text-white font-bold">24/7 Tech Support</p>
-                                <p class="text-white/70 text-sm">Round-the-clock assistance</p>
+                                <p class="text-white font-bold">Responsive Tech Support</p>
+                                <p class="text-white/70 text-sm">WhatsApp support, business hours</p>
                             </div>
                         </div>
                         <div class="flex items-center space-x-4">
@@ -211,20 +211,20 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="text-center stat-item">
-                <div class="text-4xl font-bold text-accent">99.9%</div>
-                <p class="text-gray-600 text-sm mt-1">Uptime Guarantee</p>
+                <div class="text-2xl font-bold text-accent">Reliable</div>
+                <p class="text-gray-600 text-sm mt-1">Managed Hosting</p>
             </div>
             <div class="text-center stat-item">
-                <div class="text-4xl font-bold text-accent">24/7</div>
+                <div class="text-2xl font-bold text-accent">Responsive</div>
                 <p class="text-gray-600 text-sm mt-1">Tech Support</p>
             </div>
             <div class="text-center stat-item">
-                <div class="text-4xl font-bold text-accent">500+</div>
-                <p class="text-gray-600 text-sm mt-1">Servers Managed</p>
+                <div class="text-2xl font-bold text-accent">Secure</div>
+                <p class="text-gray-600 text-sm mt-1">Infrastructure</p>
             </div>
             <div class="text-center stat-item">
-                <div class="text-4xl font-bold text-accent">100%</div>
-                <p class="text-gray-600 text-sm mt-1">Client Satisfaction</p>
+                <div class="text-2xl font-bold text-accent">Bilingual</div>
+                <p class="text-gray-600 text-sm mt-1">FR & EN Support</p>
             </div>
         </div>
     </div>
@@ -249,7 +249,7 @@
                     <i class="fas fa-server text-3xl"></i>
                 </div>
                 <h4 class="text-xl font-bold text-dark mb-3">Reliable Infrastructure</h4>
-                <p class="text-gray-600">Enterprise-grade hosting and infrastructure that ensures your business runs smoothly 24/7.</p>
+                <p class="text-gray-600">Reliable hosting and infrastructure that keeps your business running smoothly.</p>
             </div>
             <div class="benefit-item bg-white p-8 rounded-2xl shadow-sm">
                 <div class="w-16 h-16 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
@@ -289,7 +289,7 @@
                     <i class="fas fa-cloud-upload-alt text-white text-3xl"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-dark mb-3">Cloud Hosting</h3>
-                <p class="text-gray-600 mb-4">Secure, scalable cloud hosting solutions with 99.9% uptime guarantee and lightning-fast performance.</p>
+                <p class="text-gray-600 mb-4">Secure, scalable cloud hosting solutions with reliable uptime and lightning-fast performance.</p>
                 <ul class="space-y-2 text-sm text-gray-700">
                     <li><i class="fas fa-check-circle text-accent mr-2"></i> Managed Cloud Servers</li>
                     <li><i class="fas fa-check-circle text-accent mr-2"></i> AWS & Google Cloud</li>
@@ -319,9 +319,9 @@
                     <i class="fas fa-headset text-white text-3xl"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-dark mb-3">Tech Support</h3>
-                <p class="text-gray-600 mb-4">24/7 technical support to resolve issues quickly and keep your business operations running smoothly.</p>
+                <p class="text-gray-600 mb-4">Responsive technical support to resolve issues quickly and keep your business operations running smoothly.</p>
                 <ul class="space-y-2 text-sm text-gray-700">
-                    <li><i class="fas fa-check-circle text-accent mr-2"></i> 24/7 Helpdesk</li>
+                    <li><i class="fas fa-check-circle text-accent mr-2"></i> WhatsApp Helpdesk</li>
                     <li><i class="fas fa-check-circle text-accent mr-2"></i> Remote Support</li>
                     <li><i class="fas fa-check-circle text-accent mr-2"></i> Hardware Support</li>
                     <li><i class="fas fa-check-circle text-accent mr-2"></i> Software Updates</li>
@@ -444,61 +444,6 @@
     </div>
 </section>
 
-<!-- PORTFOLIO SECTION -->
-<section id="portfolio" class="py-20 lg:py-32 bg-muted">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <div class="inline-block px-4 py-2 bg-white rounded-md mb-6">
-                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Case Studies</span>
-            </div>
-            <h2 class="text-4xl font-bold text-dark mb-4 tracking-tighter">IT Solutions <span class="text-accent">Success Stories</span></h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                See how we've helped businesses improve their IT infrastructure and operations.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-2xl shadow-sm">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center text-xl">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <div class="ml-3">
-                        <h4 class="font-bold text-dark">Cloud Migration</h4>
-                        <p class="text-sm text-gray-500">E-commerce Company</p>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm">Successfully migrated 100+ servers to cloud infrastructure with zero downtime and 40% cost savings.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center text-xl">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="ml-3">
-                        <h4 class="font-bold text-dark">Security Overhaul</h4>
-                        <p class="text-sm text-gray-500">Financial Services</p>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm">Implemented enterprise-grade security system, reducing vulnerabilities by 95% and passing compliance audits.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-accent/10 text-accent rounded-lg flex items-center justify-center text-xl">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <div class="ml-3">
-                        <h4 class="font-bold text-dark">IT Support</h4>
-                        <p class="text-sm text-gray-500">Healthcare Provider</p>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm">Provided 24/7 IT support, reducing system downtime by 90% and improving response times by 75%.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <!-- FAQ SECTION -->
 <section class="py-20 lg:py-32 bg-muted">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -522,11 +467,11 @@
 
             <div class="faq-item">
                 <div class="faq-question flex justify-between items-center" onclick="toggleFAQ(this)">
-                    <h4 class="text-lg font-bold text-dark">Do you provide 24/7 IT support?</h4>
+                    <h4 class="text-lg font-bold text-dark">How fast is your IT support?</h4>
                     <i class="fas fa-chevron-down text-accent transition-transform"></i>
                 </div>
                 <div class="faq-answer text-gray-600 mt-2">
-                    <p>Yes, we offer 24/7 technical support for all our clients. Our team is available round-the-clock to resolve any issues and ensure your business operations run smoothly.</p>
+                    <p>We offer responsive technical support over WhatsApp during business hours (Mon–Thu 8:00–16:30, Sat–Sun 10:00–17:00, closed Fridays), so you can always reach a real person quickly.</p>
                 </div>
             </div>
 
@@ -579,7 +524,7 @@
             <a href="#consultation-form" class="h-16 px-10 bg-primary text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:scale-105">
                 Get IT Support
             </a>
-            <a href="https://wa.me/+12402806137" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-accent">
+            <a href="{{ \App\Support\Contact::whatsappUrl(app()->getLocale() === 'fr' ? 'Bonjour, je suis intéressé(e) par vos solutions IT.' : "Hi, I'm interested in IT solutions.") }}" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-accent">
                 Message on WhatsApp
             </a>
         </div>

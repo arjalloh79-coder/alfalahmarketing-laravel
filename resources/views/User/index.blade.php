@@ -40,16 +40,16 @@
                 <!-- Stats -->
                 <div class="grid grid-cols-3 gap-6 mt-12">
                     <div>
-                        <div class="text-4xl font-bold text-white mb-1">500+</div>
-                        <div class="text-white/80 text-sm uppercase tracking-wider">Clients</div>
+                        <div class="text-4xl font-bold text-white mb-1">12+</div>
+                        <div class="text-white/80 text-sm uppercase tracking-wider">Projects Delivered</div>
                     </div>
                     <div>
-                        <div class="text-4xl font-bold text-white mb-1">98%</div>
-                        <div class="text-white/80 text-sm uppercase tracking-wider">Success Rate</div>
+                        <div class="text-4xl font-bold text-white mb-1">3</div>
+                        <div class="text-white/80 text-sm uppercase tracking-wider">Countries Served</div>
                     </div>
                     <div>
-                        <div class="text-4xl font-bold text-white mb-1">15+</div>
-                        <div class="text-white/80 text-sm uppercase tracking-wider">Years Exp</div>
+                        <div class="text-4xl font-bold text-white mb-1">2023</div>
+                        <div class="text-white/80 text-sm uppercase tracking-wider">Since</div>
                     </div>
                 </div>
             </div>
@@ -86,29 +86,25 @@
                     We Are Your Growth Partner
                 </h2>
                 
-                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                    Since 2009, we've been helping businesses scale through strategic digital marketing. Our team of experts combines creativity with data analytics to deliver campaigns that don't just look good—they perform.
-                </p>
-                
                 <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    From startups to Fortune 500 companies, we've partnered with brands across industries to achieve remarkable growth and establish market dominance.
+                    Al-Falah Marketing helps small and growing businesses in Guinea, Sierra Leone and the USA compete online. We combine web development, digital marketing and AI automation into simple systems that bring in real customers, priced for SMB budgets.
                 </p>
-                
+
                 <div class="grid grid-cols-2 gap-6 mb-8">
                     <div class="bg-muted rounded-lg p-6">
                         <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-4">
-                            <i class="fas fa-award text-white text-2xl"></i>
+                            <i class="fas fa-language text-white text-2xl"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-dark mb-2">Award Winning</h4>
-                        <p class="text-gray-600 text-sm">Recognized industry leader</p>
+                        <h4 class="text-xl font-bold text-dark mb-2">Bilingual Team: FR & EN</h4>
+                        <p class="text-gray-600 text-sm">French and English, side by side</p>
                     </div>
-                    
+
                     <div class="bg-muted rounded-lg p-6">
                         <div class="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center mb-4">
-                            <i class="fas fa-users text-white text-2xl"></i>
+                            <i class="fab fa-whatsapp text-white text-2xl"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-dark mb-2">Expert Team</h4>
-                        <p class="text-gray-600 text-sm">50+ marketing specialists</p>
+                        <h4 class="text-xl font-bold text-dark mb-2">WhatsApp-First Support</h4>
+                        <p class="text-gray-600 text-sm">Reach us where you already are</p>
                     </div>
                 </div>
                 
@@ -490,36 +486,8 @@
                     Ready to transform your digital presence? Get in touch with our team for a free consultation and custom strategy.
                 </p>
                 
-                <div class="space-y-6 mb-8">
-                    <div class="flex items-start">
-                        <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-phone text-white text-xl"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold text-dark mb-1">Phone</h4>
-                            <p class="text-gray-600">+1 2402806137</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-envelope text-white text-xl"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold text-dark mb-1">Email</h4>
-                            <p class="text-gray-600">info@al-falahmarketing.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="w-14 h-14 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-map-marker-alt text-white text-xl"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold text-dark mb-1">Office</h4>
-                            <p class="text-gray-600">8468 Winding Trail, Laurel, MD 20724, USA</p>
-                        </div>
-                    </div>
+                <div class="mb-8">
+                    @include('partials.contact-info')
                 </div>
                 
                 <div class="flex space-x-4">
@@ -597,11 +565,11 @@
     
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tighter">
-            Ready To Accelerate Your Growth?
+            Ready To Get More Customers Online?
         </h2>
-        
+
         <p class="text-xl text-white/90 mb-10 leading-relaxed">
-            Join 500+ businesses that trust MarketPro to deliver exceptional marketing results. Let's build something amazing together.
+            Book a free 30-min strategy call and let's build something amazing together.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">

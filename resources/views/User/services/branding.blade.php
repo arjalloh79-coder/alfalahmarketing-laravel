@@ -156,7 +156,7 @@
                             </div>
                             <div>
                                 <p class="text-white font-bold">Creative Excellence</p>
-                                <p class="text-white/70 text-sm">Award-winning designs</p>
+                                <p class="text-white/70 text-sm">Custom, brand-focused designs</p>
                             </div>
                         </div>
                         <div class="flex items-center space-x-4">
@@ -445,63 +445,6 @@
 </section>
 
 
-<!-- TESTIMONIALS -->
-<section class="py-20 lg:py-32 bg-muted">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <div class="inline-block px-4 py-2 bg-white rounded-md mb-6">
-                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Testimonials</span>
-            </div>
-            <h2 class="text-4xl font-bold text-dark mb-4 tracking-tighter">What Our Clients <span class="text-accent">Say</span></h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="testimonial-card bg-white p-8 rounded-2xl shadow-sm">
-                <div class="flex text-accent mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-600 mb-4">"The branding package transformed our business. Our new identity perfectly captures who we are and has helped us attract premium clients."</p>
-                <div>
-                    <p class="font-bold text-dark">Sarah Johnson</p>
-                    <p class="text-sm text-gray-500">CEO, TechStart Solutions</p>
-                </div>
-            </div>
-            <div class="testimonial-card bg-white p-8 rounded-2xl shadow-sm">
-                <div class="flex text-accent mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-600 mb-4">"The UI/UX design for our app was exceptional. Our users love the intuitive interface and we've seen a 40% increase in engagement."</p>
-                <div>
-                    <p class="font-bold text-dark">Michael Chen</p>
-                    <p class="text-sm text-gray-500">Founder, HealthTrack App</p>
-                </div>
-            </div>
-            <div class="testimonial-card bg-white p-8 rounded-2xl shadow-sm">
-                <div class="flex text-accent mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-600 mb-4">"From logo to brand guidelines, everything was delivered with exceptional quality and attention to detail. Highly recommended!"</p>
-                <div>
-                    <p class="font-bold text-dark">Emily Rodriguez</p>
-                    <p class="text-sm text-gray-500">Marketing Director, GreenLife Co.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- FAQ SECTION -->
 <section class="py-20 lg:py-32 bg-muted">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -582,7 +525,7 @@
             <a href="#consultation-form" class="h-16 px-10 bg-primary text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:scale-105">
                 Start Your Brand Journey
             </a>
-            <a href="https://wa.me/+12402806137" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-accent">
+            <a href="{{ \App\Support\Contact::whatsappUrl(app()->getLocale() === 'fr' ? 'Bonjour, je suis intéressé(e) par le branding.' : "Hi, I'm interested in branding.") }}" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-accent">
                 Message on WhatsApp
             </a>
         </div>

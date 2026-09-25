@@ -30,36 +30,8 @@
                     Ready to transform your digital presence? Get in touch with our team for a free consultation and custom strategy.
                 </p>
                 
-                <div class="space-y-6 mb-8">
-                    <div class="flex items-start">
-                        <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-phone text-white text-xl"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold text-dark mb-1">Phone</h4>
-                            <p class="text-gray-600">+ 12402806137</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-envelope text-white text-xl"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold text-dark mb-1">Email</h4>
-                            <p class="text-gray-600">info@al-falahmarketing.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="w-14 h-14 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-map-marker-alt text-white text-xl"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold text-dark mb-1">Office</h4>
-                            <p class="text-gray-600">8468 Winding Trail, Laurel, MD 20724, USA</p>
-                        </div>
-                    </div>
+                <div class="mb-8">
+                    @include('partials.contact-info')
                 </div>
                 
                 <div class="flex space-x-4">

@@ -132,7 +132,7 @@
                             <a href="/#consultation-form" class="w-full h-12 bg-primary text-white rounded-lg font-bold text-xs uppercase tracking-widest flex items-center justify-center transition-colors hover:bg-blue-600">
                                 <i class="fas fa-video mr-2"></i> Book Next Session
                             </a>
-                            <a href="https://wa.me/YOUR_NUMBER" target="_blank" class="w-full h-12 border-2 border-muted text-dark hover:border-primary rounded-lg font-bold text-xs uppercase tracking-widest flex items-center justify-center transition-colors">
+                            <a href="{{ \App\Support\Contact::whatsappUrl() }}" target="_blank" class="w-full h-12 border-2 border-muted text-dark hover:border-primary rounded-lg font-bold text-xs uppercase tracking-widest flex items-center justify-center transition-colors">
                                 <i class="fab fa-whatsapp text-secondary mr-2 text-base"></i> Direct Message Team
                             </a>
                         </div>

@@ -203,7 +203,7 @@
                     <div class="bg-white p-8 rounded-xl shadow-sm h-full flex flex-col border border-gray-100">
                         <h4 class="text-xl font-bold text-primary mb-4">For USA Service Biz</h4>
                         <p class="text-gray-600 text-sm mb-6">Attract local clients for HVAC, Plumbing, or Legal services with high-intent Google Ads and Local SEO.</p>
-                        <a href="https://wa.me/+12402806137" class="mt-auto text-dark font-bold hover:text-primary inline-flex items-center">Get Started <i class="fas fa-chevron-right ml-2 text-xs"></i></a>
+                        <a href="{{ \App\Support\Contact::whatsappUrl() }}" class="mt-auto text-dark font-bold hover:text-primary inline-flex items-center">Get Started <i class="fas fa-chevron-right ml-2 text-xs"></i></a>
                     </div>
                 </div>
                 <!-- Slide 2 -->
@@ -211,7 +211,7 @@
                     <div class="bg-white p-8 rounded-xl shadow-sm h-full flex flex-col border border-gray-100">
                         <h4 class="text-xl font-bold text-secondary mb-4">For African Startups</h4>
                         <p class="text-gray-600 text-sm mb-6">Scale your fintech or e-commerce brand across the continent with aggressive social media growth and viral content.</p>
-                        <a href="https://wa.me/+12402806137?" class="mt-auto text-dark font-bold hover:text-secondary inline-flex items-center">Get Started <i class="fas fa-chevron-right ml-2 text-xs"></i></a>
+                        <a href="{{ \App\Support\Contact::whatsappUrl() }}" class="mt-auto text-dark font-bold hover:text-secondary inline-flex items-center">Get Started <i class="fas fa-chevron-right ml-2 text-xs"></i></a>
                     </div>
                 </div>
                 <!-- Slide 3 -->
@@ -219,7 +219,7 @@
                     <div class="bg-white p-8 rounded-xl shadow-sm h-full flex flex-col border border-gray-100">
                         <h4 class="text-xl font-bold text-accent mb-4">AI Integration</h4>
                         <p class="text-gray-600 text-sm mb-6">Reduce manual work by 40% with automated email responders and AI-driven CRM management systems.</p>
-                        <a href="https://wa.me/+12402806137" class="mt-auto text-dark font-bold hover:text-accent inline-flex items-center">Get Started <i class="fas fa-chevron-right ml-2 text-xs"></i></a>
+                        <a href="{{ \App\Support\Contact::whatsappUrl() }}" class="mt-auto text-dark font-bold hover:text-accent inline-flex items-center">Get Started <i class="fas fa-chevron-right ml-2 text-xs"></i></a>
                     </div>
                 </div>
                 <!-- Slide 4 -->
@@ -227,7 +227,7 @@
                     <div class="bg-white p-8 rounded-xl shadow-sm h-full flex flex-col border border-gray-100">
                         <h4 class="text-xl font-bold text-primary mb-4">E-commerce Growth</h4>
                         <p class="text-gray-600 text-sm mb-6">Global shipping brands: get more sales with professional Shopify setups and Retargeting Ads.</p>
-                        <a href="https://wa.me/+12402806137" class="mt-auto text-dark font-bold hover:text-primary inline-flex items-center">Get Started <i class="fas fa-chevron-right ml-2 text-xs"></i></a>
+                        <a href="{{ \App\Support\Contact::whatsappUrl() }}" class="mt-auto text-dark font-bold hover:text-primary inline-flex items-center">Get Started <i class="fas fa-chevron-right ml-2 text-xs"></i></a>
                     </div>
                 </div>
             </div>
@@ -292,7 +292,7 @@
             <a href="#consultation-form" class="h-16 px-10 bg-accent text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:scale-105">
                 Book a Consultation
             </a>
-            <a href="https://wa.me/+12402806137" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-primary">
+            <a href="{{ \App\Support\Contact::whatsappUrl() }}" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-primary">
                 Message on WhatsApp
             </a>
         </div>

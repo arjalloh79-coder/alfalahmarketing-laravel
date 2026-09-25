@@ -203,22 +203,15 @@
 <!-- STATS SECTION -->
 <section class="py-16 bg-white border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="text-center stat-item">
-                <div class="text-4xl font-bold text-secondary">10M+</div>
-                <p class="text-gray-600 text-sm mt-1">Content Views</p>
+                <div class="text-2xl font-bold text-secondary">Plan</div>
             </div>
             <div class="text-center stat-item">
-                <div class="text-4xl font-bold text-secondary">500+</div>
-                <p class="text-gray-600 text-sm mt-1">Blog Posts Written</p>
+                <div class="text-2xl font-bold text-secondary">Create</div>
             </div>
             <div class="text-center stat-item">
-                <div class="text-4xl font-bold text-secondary">200+</div>
-                <p class="text-gray-600 text-sm mt-1">Videos Produced</p>
-            </div>
-            <div class="text-center stat-item">
-                <div class="text-4xl font-bold text-secondary">1000+</div>
-                <p class="text-gray-600 text-sm mt-1">Graphics Created</p>
+                <div class="text-2xl font-bold text-secondary">Publish Weekly</div>
             </div>
         </div>
     </div>
@@ -494,64 +487,6 @@
 
 
 
-<!-- TESTIMONIALS -->
-<section class="py-20 lg:py-32 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <div class="inline-block px-4 py-2 bg-muted rounded-md mb-6">
-                <span class="text-secondary font-semibold text-sm uppercase tracking-wider">Testimonials</span>
-            </div>
-            <h2 class="text-4xl font-bold text-dark mb-4 tracking-tighter">What Our Clients <span class="text-secondary">Say</span></h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-muted p-8 rounded-2xl">
-                <div class="flex text-secondary mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-600 mb-4">"The content created by Al-Falah has transformed our online presence. Our blog traffic has increased by 300% and we're getting more leads than ever."</p>
-                <div>
-                    <p class="font-bold text-dark">David Thompson</p>
-                    <p class="text-sm text-gray-500">CEO, TechVibe Solutions</p>
-                </div>
-            </div>
-            <div class="bg-muted p-8 rounded-2xl">
-                <div class="flex text-secondary mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-600 mb-4">"The video marketing campaigns have been incredible. Our engagement rates have doubled and we're seeing a significant increase in brand awareness."</p>
-                <div>
-                    <p class="font-bold text-dark">Sarah Mitchell</p>
-                    <p class="text-sm text-gray-500">Marketing Director, GreenLeaf Co.</p>
-                </div>
-            </div>
-            <div class="bg-muted p-8 rounded-2xl">
-                <div class="flex text-secondary mb-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-600 mb-4">"Working with the content team has been a game-changer. Their strategic approach and creative execution are unmatched in the industry."</p>
-                <div>
-                    <p class="font-bold text-dark">James Rodriguez</p>
-                    <p class="text-sm text-gray-500">Founder, Elevate Agency</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <!-- FAQ SECTION -->
 <section class="py-20 lg:py-32 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -632,7 +567,7 @@
             <a href="#consultation-form" class="h-16 px-10 bg-accent text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:scale-105">
                 Start Creating
             </a>
-            <a href="https://wa.me/+12402806137" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-secondary">
+            <a href="{{ \App\Support\Contact::whatsappUrl(app()->getLocale() === 'fr' ? 'Bonjour, je suis intéressé(e) par la création de contenu.' : "Hi, I'm interested in content creation.") }}" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-secondary">
                 Message on WhatsApp
             </a>
         </div>

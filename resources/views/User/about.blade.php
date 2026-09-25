@@ -167,7 +167,7 @@
                 </div>
 
                 <div class="flex space-x-4">
-                    <a href="https://wa.me/+12402806137?" class="h-14 px-8 bg-green-500 text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:scale-105">
+                    <a href="{{ \App\Support\Contact::whatsappUrl() }}" class="h-14 px-8 bg-green-500 text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:scale-105">
                         <i class="fab fa-whatsapp mr-2 text-xl"></i>
                         Message on WhatsApp
                     </a>
@@ -201,7 +201,7 @@
             <a href="#consultation-form" class="h-16 px-10 bg-white text-accent rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:scale-105">
                 Book a Consultation
             </a>
-            <a href="https://wa.me/+12402806137?" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-accent">
+            <a href="{{ \App\Support\Contact::whatsappUrl() }}" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-accent">
                 WhatsApp Message
             </a>
         </div>

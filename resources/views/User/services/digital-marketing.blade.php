@@ -134,20 +134,20 @@
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                     <div class="grid grid-cols-2 gap-6">
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent">200+</div>
-                            <p class="text-white/80 text-sm mt-1">Happy Clients</p>
+                            <div class="text-2xl font-bold text-accent">Data-Driven</div>
+                            <p class="text-white/80 text-sm mt-1">Strategy</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent">95%</div>
-                            <p class="text-white/80 text-sm mt-1">Client Retention</p>
+                            <div class="text-2xl font-bold text-accent">Bilingual</div>
+                            <p class="text-white/80 text-sm mt-1">FR & EN Campaigns</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent">300%</div>
-                            <p class="text-white/80 text-sm mt-1">Average ROI</p>
+                            <div class="text-2xl font-bold text-accent">SMB</div>
+                            <p class="text-white/80 text-sm mt-1">Friendly Pricing</p>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-accent">4.9★</div>
-                            <p class="text-white/80 text-sm mt-1">Client Rating</p>
+                            <div class="text-2xl font-bold text-accent">WhatsApp</div>
+                            <p class="text-white/80 text-sm mt-1">Direct Support</p>
                         </div>
                     </div>
                 </div>
@@ -161,20 +161,20 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="text-center stat-counter">
-                <div class="text-4xl font-bold text-secondary">$10M+</div>
-                <p class="text-gray-600 text-sm mt-1">Revenue Generated</p>
+                <div class="text-2xl font-bold text-secondary">SEO</div>
+                <p class="text-gray-600 text-sm mt-1">Search Optimization</p>
             </div>
             <div class="text-center stat-counter">
-                <div class="text-4xl font-bold text-secondary">50K+</div>
-                <p class="text-gray-600 text-sm mt-1">Leads Generated</p>
+                <div class="text-2xl font-bold text-secondary">Ads</div>
+                <p class="text-gray-600 text-sm mt-1">Facebook & Google</p>
             </div>
             <div class="text-center stat-counter">
-                <div class="text-4xl font-bold text-secondary">1000+</div>
-                <p class="text-gray-600 text-sm mt-1">Campaigns Run</p>
+                <div class="text-2xl font-bold text-secondary">Social</div>
+                <p class="text-gray-600 text-sm mt-1">Media Management</p>
             </div>
             <div class="text-center stat-counter">
-                <div class="text-4xl font-bold text-secondary">8+</div>
-                <p class="text-gray-600 text-sm mt-1">Years Experience</p>
+                <div class="text-2xl font-bold text-secondary">Email</div>
+                <p class="text-gray-600 text-sm mt-1">Marketing</p>
             </div>
         </div>
     </div>
@@ -539,7 +539,7 @@
             <a href="#consultation-form" class="h-16 px-10 bg-accent text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:scale-105">
                 Get Free Consultation
             </a>
-            <a href="https://wa.me/+12402806137" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-secondary">
+            <a href="{{ \App\Support\Contact::whatsappUrl(app()->getLocale() === 'fr' ? 'Bonjour, je suis intéressé(e) par le marketing digital.' : "Hi, I'm interested in digital marketing.") }}" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-secondary">
                 Message on WhatsApp
             </a>
         </div>

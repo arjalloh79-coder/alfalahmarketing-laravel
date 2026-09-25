@@ -142,7 +142,7 @@
                             </div>
                             <div>
                                 <p class="text-white font-bold">Lightning Fast</p>
-                                <p class="text-white/70 text-sm">99% Page Speed Score</p>
+                                <p class="text-white/70 text-sm">Mobile-First & Fast-Loading</p>
                             </div>
                         </div>
                         <div class="flex items-center space-x-4">
@@ -219,7 +219,7 @@
                     <i class="fas fa-headset text-3xl"></i>
                 </div>
                 <h4 class="text-xl font-bold text-dark mb-2">Ongoing Support</h4>
-                <p class="text-gray-600 text-sm">24/7 maintenance and support to keep your site running smoothly.</p>
+                <p class="text-gray-600 text-sm">Ongoing maintenance and WhatsApp support to keep your site running smoothly.</p>
             </div>
         </div>
     </div>
@@ -319,7 +319,7 @@
                 <ul class="space-y-2 text-sm text-gray-700">
                     <li><i class="fas fa-check-circle text-accent mr-2"></i> Security Updates</li>
                     <li><i class="fas fa-check-circle text-accent mr-2"></i> Performance Optimization</li>
-                    <li><i class="fas fa-check-circle text-accent mr-2"></i> 24/7 Monitoring</li>
+                    <li><i class="fas fa-check-circle text-accent mr-2"></i> Uptime Monitoring</li>
                 </ul>
             </div>
         </div>
@@ -478,7 +478,7 @@
             <a href="#consultation-form" class="h-16 px-10 bg-accent text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:scale-105">
                 Start Your Project
             </a>
-            <a href="https://wa.me/+12402806137" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-primary">
+            <a href="{{ \App\Support\Contact::whatsappUrl(app()->getLocale() === 'fr' ? 'Bonjour, je suis intéressé(e) par la création de site web.' : "Hi, I'm interested in a website.") }}" class="h-16 px-10 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-primary">
                 Message on WhatsApp
             </a>
         </div>

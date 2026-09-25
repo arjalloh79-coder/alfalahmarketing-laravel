@@ -16,8 +16,8 @@ use App\Http\Controllers\NewsletterController;
 
 
 Route::get('/', [UserController::class, 'index'])->name('home');
-Route::get('/About-us', [UserController::class, 'about'])->name('about');
-Route::get('/Services', [UserController::class, 'service'])->name('service');
+Route::get('/about-us', [UserController::class, 'about'])->name('about');
+Route::get('/services', [UserController::class, 'service'])->name('service');
 Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
@@ -25,8 +25,13 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
 
 
-Route::get('/Blog', [UserController::class, 'blog'])->name('blog');
+Route::get('/blog', [UserController::class, 'blog'])->name('blog');
 Route::get('/blog/{slug}', [UserController::class, 'show'])->name('blog.show');
+
+// Legacy capitalized URLs — 301 to the lowercase canonical route, query string preserved.
+Route::get('/About-us', fn () => redirect()->route('about', request()->query(), 301));
+Route::get('/Services', fn () => redirect()->route('service', request()->query(), 301));
+Route::get('/Blog', fn () => redirect()->route('blog', request()->query(), 301));
 
 //admin controller 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');

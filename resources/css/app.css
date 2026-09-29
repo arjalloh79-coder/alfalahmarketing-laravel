@@ -1,9 +1,120 @@
-@import 'tailwindcss';
+/*
+ * Public-site stylesheet, compiled by Vite + Tailwind v4 (`npm run build`).
+ * Replaces the Tailwind Play CDN script + inline tailwind.config that used to
+ * live in resources/views/User/main.blade.php. The admin panel still uses its
+ * own CDN setup (resources/views/admin/main.blade.php) and is not scanned.
+ */
+@import 'tailwindcss' source(none);
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+@source '../views';
+@source not '../views/admin';
+@source '../../app';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-outfit: 'Outfit', sans-serif;
+
+    /* Brand cyan — from Al-Falah logo (bright cyan). Updated Sept 29, 2026. */
+    --color-primary: #2AD3DE;
+    --color-dark: #0B2A3A;
+    --color-secondary: #10B981;
+    --color-accent: #F59E0B;
+    --color-muted: #F3F4F6;
+
+    --tracking-tighter: -0.02em;
+}
+
+/*
+ * Tailwind v3 compatibility: the site was built against the v3 Play CDN,
+ * whose defaults differ from v4 in these places.
+ */
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: var(--color-gray-400);
+    }
+
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
+}
+
+/* Site-wide custom styles (moved from the layout's inline <style>). Kept in
+   the base layer so Tailwind utilities still override them. */
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Outfit', sans-serif;
+        background: #FFFFFF;
+        color: #111827;
+        overflow-x: hidden;
+    }
+
+    /* Remove all shadows globally */
+    * {
+        box-shadow: none !important;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #F3F4F6;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-primary);
+        border-radius: 5px;
+    }
+
+    ::selection {
+        background: var(--color-primary);
+        color: white;
+    }
+
+    /* Hide Google Translate top bar / banner and tooltips (removed in Phase 4) */
+    .skiptranslate iframe,
+    .goog-te-banner-frame,
+    .goog-te-banner,
+    .goog-te-menu-value,
+    iframe.goog-te-banner-frame,
+    #goog-gt-tt,
+    .goog-te-balloon-frame {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    body {
+        top: 0px !important;
+        position: static !important;
+    }
+
+    html {
+        top: 0px !important;
+    }
+
+    /* Prevent Google Translate from showing highlighted text on hover */
+    .goog-text-highlight {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
 }

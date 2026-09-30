@@ -18,10 +18,10 @@
         <div class="inline-block px-4 py-2 bg-white/20 rounded-md mb-4 md:mb-6">
             <span class="text-white font-semibold text-xs md:text-sm uppercase tracking-wider">Al-Falah Insights</span>
         </div>
-        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 tracking-tighter leading-tight">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 tracking-tighter leading-tight md:leading-none lg:leading-none">
             Knowledge for <span class="text-accent">Growth</span>
         </h1>
-        <p class="text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed px-2">
+        <p class="text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed px-2 md:leading-7 lg:leading-7">
             Expert advice on SEO, AI-Marketing, and Web Design tailored for small businesses in the USA and Africa.
         </p>
 
@@ -63,7 +63,7 @@
                         <span class="px-2.5 py-1 bg-accent/20 text-accent text-[10px] md:text-xs font-bold uppercase rounded">Featured</span>
                         <span class="text-gray-500 text-xs md:text-sm">{{ $featured->created_at->format('M d, Y') }}</span>
                     </div>
-                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-dark mb-4 md:mb-6 leading-tight group-hover:text-primary transition-colors">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-dark mb-4 md:mb-6 leading-tight group-hover:text-primary transition-colors md:leading-9 lg:leading-10">
                         {{ $featured->title }}
                     </h2>
                     <p class="text-gray-600 text-sm md:text-base lg:text-lg mb-6 md:mb-8">

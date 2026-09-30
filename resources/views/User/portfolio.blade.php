@@ -14,10 +14,10 @@
         <div class="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full mb-4 border border-white/10">
             <span class="text-white font-medium text-xs uppercase tracking-widest">Proof of Excellence</span>
         </div>
-        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight leading-tight">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight leading-tight md:leading-none lg:leading-none">
             Real Clients. <span class="text-accent">Real Results.</span>
         </h1>
-        <p class="text-sm md:text-base lg:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-sm md:text-base lg:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed md:leading-6 lg:leading-7">
             From local businesses in the USA to fast-growing startups in Africa, we build digital systems that turn clicks into customers.
         </p>
     </div>

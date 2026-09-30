@@ -23,7 +23,7 @@
         <div class="inline-block px-4 py-2 bg-white/20 rounded-md mb-6">
             <span class="text-white font-semibold text-sm uppercase tracking-wider">What We Offer</span>
         </div>
-        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tighter">
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tighter md:leading-none">
             Helping Small Businesses Get <span class="text-accent">More Customers</span>
         </h1>
         <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
@@ -252,21 +252,21 @@
                 <h2 class="text-4xl font-bold text-dark mb-6 tracking-tighter">Your Path to More Customers</h2>
                 <div class="space-y-8">
                     <div class="flex">
-                        <div class="w-12 h-12 bg-primary/10 text-primary flex-shrink-0 flex items-center justify-center rounded-full font-bold">1</div>
+                        <div class="w-12 h-12 bg-primary/10 text-primary shrink-0 flex items-center justify-center rounded-full font-bold">1</div>
                         <div class="ml-4">
                             <h4 class="text-xl font-bold text-dark">Discovery & Strategy</h4>
                             <p class="text-gray-600">We analyze your market in the USA or Africa to find the gaps where your competitors are weak.</p>
                         </div>
                     </div>
                     <div class="flex">
-                        <div class="w-12 h-12 bg-secondary/10 text-secondary flex-shrink-0 flex items-center justify-center rounded-full font-bold">2</div>
+                        <div class="w-12 h-12 bg-secondary/10 text-secondary shrink-0 flex items-center justify-center rounded-full font-bold">2</div>
                         <div class="ml-4">
                             <h4 class="text-xl font-bold text-dark">Build & Launch</h4>
                             <p class="text-gray-600">We deploy your website and AI systems, ensuring everything is tracked for performance.</p>
                         </div>
                     </div>
                     <div class="flex">
-                        <div class="w-12 h-12 bg-accent/10 text-accent flex-shrink-0 flex items-center justify-center rounded-full font-bold">3</div>
+                        <div class="w-12 h-12 bg-accent/10 text-accent shrink-0 flex items-center justify-center rounded-full font-bold">3</div>
                         <div class="ml-4">
                             <h4 class="text-xl font-bold text-dark">Scale & Automate</h4>
                             <p class="text-gray-600">Once we see what works, we scale the budget and automate the leads so you can focus on running your business.</p>

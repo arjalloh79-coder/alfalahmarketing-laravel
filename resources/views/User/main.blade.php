@@ -63,109 +63,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicon-32x32.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/apple-touch-icon.png') }}">
 
-    <!-- Google Fonts - Outfit (optimized: removed unused weights 300, 400 to save ~15KB) -->
+    <!-- Google Fonts - Outfit (only the weights the site uses) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Custom Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'outfit': ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#3B82F6',
-                        secondary: '#10B981',
-                        accent: '#F59E0B',
-                        dark: '#111827',
-                        muted: '#F3F4F6',
-                    },
-                    letterSpacing: {
-                        tighter: '-0.02em',
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Outfit', sans-serif;
-            background: #FFFFFF;
-            color: #111827;
-            overflow-x: hidden;
-        }
-        
-        /* Remove all shadows globally */
-        * {
-            box-shadow: none !important;
-        }
-        
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #F3F4F6;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #3B82F6;
-            border-radius: 5px;
-        }
-        
-        /* Selection */
-        ::selection {
-            background: #3B82F6;
-            color: white;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        /* Hide Google Translate top bar / banner and tooltips */
-        .skiptranslate iframe,
-        .goog-te-banner-frame,
-        .goog-te-banner,
-        .goog-te-menu-value,
-        iframe.goog-te-banner-frame,
-        #goog-gt-tt,
-        .goog-te-balloon-frame {
-            display: none !important;
-            visibility: hidden !important;
-        }
-        body {
-            top: 0px !important;
-            position: static !important;
-        }
-        html {
-            top: 0px !important;
-        }
-        /* Prevent Google Translate from showing highlighted text on hover */
-        .goog-text-highlight {
-            background-color: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-        }
-    </style>
+    <!-- Compiled Tailwind + site styles (resources/css/app.css, built with `npm run build`) -->
+    @vite('resources/css/app.css')
+
+    <!-- Font Awesome: loaded without blocking first paint -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
     @yield('styles')
 

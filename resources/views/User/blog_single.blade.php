@@ -16,7 +16,7 @@
         
         <div class="mb-8">
             <span class="px-3 py-1 bg-primary/10 text-primary rounded text-sm font-bold uppercase">{{ $blog->category }}</span>
-            <h1 class="text-4xl md:text-5xl font-bold text-dark mt-4 leading-tight">{{ $blog->title }}</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-dark mt-4 leading-tight md:leading-none">{{ $blog->title }}</h1>
             <div class="flex items-center mt-6 text-gray-500 text-sm">
                 <span class="font-bold text-dark">{{ $blog->author }}</span>
                 <span class="mx-2">•</span>

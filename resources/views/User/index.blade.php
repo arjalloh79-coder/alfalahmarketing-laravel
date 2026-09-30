@@ -23,7 +23,7 @@
                     <span class="text-white font-semibold text-sm uppercase tracking-wider">Digital Marketing Excellence</span>
                 </div>
                 
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tighter">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tighter md:leading-none lg:leading-none">
                     Transform Your Brand Into A
                     <span class="text-accent"> Market Leader</span>
                 </h1>

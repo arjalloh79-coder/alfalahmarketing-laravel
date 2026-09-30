@@ -12,7 +12,7 @@
     <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tighter leading-tight">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tighter leading-tight md:leading-none">
             Welcome <span class="text-accent">Back.</span>
         </h1>
         <p class="text-base text-white/90 max-w-xl mx-auto leading-relaxed">

@@ -35,7 +35,7 @@
 @else
     <div class="space-y-6">
         <div class="flex items-start">
-            <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+            <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center shrink-0">
                 <i class="fab fa-whatsapp text-white text-xl"></i>
             </div>
             <div class="ml-4">
@@ -46,7 +46,7 @@
         </div>
 
         <div class="flex items-start">
-            <div class="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+            <div class="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center shrink-0">
                 <i class="fas fa-phone text-white text-xl"></i>
             </div>
             <div class="ml-4">
@@ -57,7 +57,7 @@
         </div>
 
         <div class="flex items-start">
-            <div class="w-14 h-14 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+            <div class="w-14 h-14 bg-accent rounded-lg flex items-center justify-center shrink-0">
                 <i class="fas fa-envelope text-white text-xl"></i>
             </div>
             <div class="ml-4">
@@ -67,7 +67,7 @@
         </div>
 
         <div class="flex items-start">
-            <div class="w-14 h-14 bg-dark rounded-lg flex items-center justify-center flex-shrink-0">
+            <div class="w-14 h-14 bg-dark rounded-lg flex items-center justify-center shrink-0">
                 <i class="fas fa-clock text-white text-xl"></i>
             </div>
             <div class="ml-4">

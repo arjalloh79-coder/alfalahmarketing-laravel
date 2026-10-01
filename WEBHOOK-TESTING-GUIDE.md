@@ -334,6 +334,10 @@ php artisan config:clear
 ### Step 1: Set Up Locally
 
 ```bash
+# IMPORTANT: For local testing without database, set SESSION_DRIVER=file in .env
+# (Production uses SESSION_DRIVER=database when connected to Hostinger MySQL)
+echo "SESSION_DRIVER=file" >> .env
+
 # Add test secret to .env
 echo "GITHUB_WEBHOOK_SECRET=test_secret_12345" >> .env
 

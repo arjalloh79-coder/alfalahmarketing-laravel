@@ -101,9 +101,9 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="lg:hidden w-10 h-10 bg-muted rounded-md flex items-center justify-center"
+            <button aria-label="Open mobile menu" class="lg:hidden w-10 h-10 bg-muted rounded-md flex items-center justify-center"
                 onclick="toggleMobileMenu()">
-                <i class="fas fa-bars text-dark text-xl" id="menuIcon"></i>
+                <i class="fas fa-bars text-dark text-xl" id="menuIcon" aria-hidden="true"></i>
             </button>
         </div>
     </div>

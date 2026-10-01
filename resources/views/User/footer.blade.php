@@ -21,21 +21,21 @@
                     @include('partials.contact-info', ['style' => 'dark'])
                 </div>
                 <div class="flex space-x-3">
-                    <a href="https://www.facebook.com/profile.php?id=61573274222922"
+                    <a href="https://www.facebook.com/profile.php?id=61573274222922" aria-label="Al-Falah Marketing on Facebook"
                         class="w-10 h-10 bg-white/10 rounded-md flex items-center justify-center text-white hover:bg-primary hover:scale-110 transition-all duration-200">
-                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
                     </a>
-                    <a href="https://youtube.com/@al-falahmarketing-official?si=tt2bDxU_qv5g8M0o"
+                    <a href="https://youtube.com/@al-falahmarketing-official?si=tt2bDxU_qv5g8M0o" aria-label="Al-Falah Marketing on YouTube"
                         class="w-10 h-10 bg-white/10 rounded-md flex items-center justify-center text-white hover:bg-primary hover:scale-110 transition-all duration-200">
-                        <i class="fab fa-youtube"></i>
+                        <i class="fab fa-youtube" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.linkedin.com/company/al-falah-marketing-inc/"
+                    <a href="https://www.linkedin.com/company/al-falah-marketing-inc/" aria-label="Al-Falah Marketing on LinkedIn"
                         class="w-10 h-10 bg-white/10 rounded-md flex items-center justify-center text-white hover:bg-primary hover:scale-110 transition-all duration-200">
-                        <i class="fab fa-linkedin-in"></i>
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.instagram.com/alfalahmarketinginc/"
+                    <a href="https://www.instagram.com/alfalahmarketinginc/" aria-label="Al-Falah Marketing on Instagram"
                         class="w-10 h-10 bg-white/10 rounded-md flex items-center justify-center text-white hover:bg-primary hover:scale-110 transition-all duration-200">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -102,7 +102,8 @@
                     @csrf
                     @include('components.spam-protection')
 
-                    <input type="email" name="email" placeholder="Your email" required
+                    <label for="newsletter-email" class="sr-only">Subscribe to our newsletter</label>
+                    <input id="newsletter-email" type="email" name="email" placeholder="Your email" required aria-label="Your email address"
                         class="w-full h-12 bg-white/10 rounded-md px-4 text-white placeholder-gray-500 focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-primary transition-all">
 
                     <button type="submit"

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Consultation;
+use App\Rules\NotFriday;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ConsultationConfirmed;
 use App\Mail\ConsultationRescheduled;
@@ -21,7 +22,8 @@ class ConsultationController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'meeting_date' => 'required|date|after_or_equal:today',
+            'meeting_date' => ['required', 'date', 'after_or_equal:today', new NotFriday()],
+            'preferred_time' => 'required|in:morning,afternoon',
             'subject' => 'required|string',
         ]);
 

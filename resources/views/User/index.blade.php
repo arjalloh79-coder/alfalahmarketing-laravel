@@ -496,17 +496,17 @@
                 </div>
                 
                 <div class="flex space-x-4">
-                    <a href="#" class="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-dark hover:bg-primary hover:text-white transition-all duration-200 hover:scale-110">
-                        <i class="fab fa-facebook-f"></i>
+                    <a href="https://www.facebook.com/profile.php?id=61573274222922" aria-label="Al-Falah Marketing on Facebook" class="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-dark hover:bg-primary hover:text-white transition-all duration-200 hover:scale-110">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-dark hover:bg-primary hover:text-white transition-all duration-200 hover:scale-110">
-                        <i class="fab fa-twitter"></i>
+                    <a href="https://twitter.com" aria-label="Al-Falah Marketing on Twitter" class="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-dark hover:bg-primary hover:text-white transition-all duration-200 hover:scale-110">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-dark hover:bg-primary hover:text-white transition-all duration-200 hover:scale-110">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/company/al-falah-marketing-inc/" aria-label="Al-Falah Marketing on LinkedIn" class="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-dark hover:bg-primary hover:text-white transition-all duration-200 hover:scale-110">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-dark hover:bg-primary hover:text-white transition-all duration-200 hover:scale-110">
-                        <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/alfalahmarketinginc/" aria-label="Al-Falah Marketing on Instagram" class="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-dark hover:bg-primary hover:text-white transition-all duration-200 hover:scale-110">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>

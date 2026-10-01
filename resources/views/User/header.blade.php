@@ -60,21 +60,8 @@
 
             <!-- Desktop Right Side Buttons / Dashboard Icon -->
             <div class="hidden lg:flex items-center space-x-4">
-
-
-
-                <!-- Language Switch -->
-    <div class="flex items-center bg-muted rounded-md overflow-hidden border border-gray-200">
-        <button onclick="setLanguage('en')" id="lang-btn-en"
-            class="px-3 h-10 text-xs font-bold uppercase transition">
-            🇬🇧 EN
-        </button>
-
-        <button onclick="setLanguage('fr')" id="lang-btn-fr"
-            class="px-3 h-10 text-xs font-bold uppercase transition">
-            🇫🇷 FR
-        </button>
-    </div>
+                <!-- Language Switcher -->
+                @include('components.language-switcher')
                 @guest
                     <!-- अगर यूजर लॉग इन नहीं है तो ये बटन दिखेंगे -->
                     <a href="{{ route('login') }}"
@@ -135,17 +122,10 @@
                     class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">Contact</a>
             </nav>
 
-           <div class="flex justify-center gap-3 mb-6">
-    <button onclick="setLanguage('en')" id="mobile-lang-btn-en"
-        class="px-4 py-2 rounded-md border font-semibold transition">
-        🇬🇧 EN
-    </button>
-
-    <button onclick="setLanguage('fr')" id="mobile-lang-btn-fr"
-        class="px-4 py-2 rounded-md border font-semibold transition">
-        🇫🇷 FR
-    </button>
-</div>
+            <!-- Mobile Language Switcher -->
+            <div class="flex justify-center gap-3 mb-6">
+                @include('components.language-switcher')
+            </div>
 
             <!-- Mobile Menu Auth Block -->
             <div class="p-6 space-y-4 border-t-2 border-gray-200">

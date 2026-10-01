@@ -78,6 +78,9 @@
     @yield('styles')
 
     @stack('jsonld')
+
+    <!-- Hreflang alternates for multilingual SEO -->
+    @include('components.hreflang-alternates')
 </head>
 <body class="antialiased">
     

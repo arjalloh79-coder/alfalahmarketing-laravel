@@ -1,7 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Contact Al-Falah Marketing — Conakry & USA')
-@section('description', 'Contact Al-Falah Marketing in Conakry, Guinea or Laurel, USA. Reach us by WhatsApp, phone or email — bilingual FR/EN support.')
+@section('title', trans('contact.contact_title') . ' | Al-Falah Marketing')
+@section('description', trans('contact.contact_subtitle'))
 
 @push('jsonld')
 {!! \App\Support\Seo::jsonLd(\App\Support\Seo::organization()) !!}
@@ -24,15 +24,15 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
                 <div class="inline-block px-4 py-2 bg-muted rounded-md mb-6">
-                    <span class="text-primary font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+                    <span class="text-primary font-semibold text-sm uppercase tracking-wider">{{ trans('messages.nav_contact') }}</span>
                 </div>
-                
+
                 <h1 class="text-4xl lg:text-5xl font-bold text-dark mb-6 tracking-tighter">
-                    Let's Grow Your Business Together
+                    {{ trans('contact.contact_title') }}
                 </h1>
-                
+
                 <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                    Ready to transform your digital presence? Get in touch with our team for a free consultation and custom strategy.
+                    {{ trans('contact.contact_subtitle') }}
                 </p>
                 
                 <div class="mb-8">
@@ -61,44 +61,41 @@
                     @include('components.spam-protection')
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label for="contact-first-name" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">First Name</label>
-                            <input id="contact-first-name" type="text" name="first_name" required value="{{ old('first_name') }}" class="w-full h-14 bg-white rounded-md px-4 text-dark focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="John">
+                            <label for="contact-first-name" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">{{ trans('contact.form_label_name') }}</label>
+                            <input id="contact-first-name" type="text" name="first_name" required value="{{ old('first_name') }}" class="w-full h-14 bg-white rounded-md px-4 text-dark focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="{{ trans('contact.form_placeholder_name') }}">
                         </div>
                         <div>
-                            <label for="contact-last-name" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">Last Name</label>
-                            <input id="contact-last-name" type="text" name="last_name" required value="{{ old('last_name') }}" class="w-full h-14 bg-white rounded-md px-4 text-dark focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="Doe">
+                            <label for="contact-last-name" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">{{ trans('messages.form_last_name') }}</label>
+                            <input id="contact-last-name" type="text" name="last_name" required value="{{ old('last_name') }}" class="w-full h-14 bg-white rounded-md px-4 text-dark focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="{{ trans('contact.form_placeholder_name') }}">
                         </div>
                     </div>
 
                     <div>
-                        <label for="contact-email" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">Email</label>
-                        <input id="contact-email" type="email" name="email" required value="{{ old('email') }}" class="w-full h-14 bg-white rounded-md px-4 text-dark focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="john@example.com">
+                        <label for="contact-email" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">{{ trans('contact.form_label_email') }}</label>
+                        <input id="contact-email" type="email" name="email" required value="{{ old('email') }}" class="w-full h-14 bg-white rounded-md px-4 text-dark focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="{{ trans('contact.form_placeholder_email') }}">
                     </div>
 
                     <div>
-                        <label for="contact-phone" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">Phone</label>
-                        <input id="contact-phone" type="tel" name="phone" value="{{ old('phone') }}" class="w-full h-14 bg-white rounded-md px-4 text-dark focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="+1 (555) 000-0000">
+                        <label for="contact-phone" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">{{ trans('contact.form_label_phone') }}</label>
+                        <input id="contact-phone" type="tel" name="phone" value="{{ old('phone') }}" class="w-full h-14 bg-white rounded-md px-4 text-dark focus:outline-none focus:ring-2 focus:ring-primary transition-all" placeholder="{{ trans('contact.form_placeholder_phone') }}">
                     </div>
 
                     <div>
-                        <label for="contact-service" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">Service Interest</label>
+                        <label for="contact-service" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">{{ trans('contact.form_label_service') }}</label>
                         <select id="contact-service" name="service_interest" class="w-full h-14 bg-white rounded-md px-4 text-dark focus:outline-none focus:ring-2 focus:ring-primary transition-all">
-                            <option value="Web Development" {{ old('service_interest') == 'Web Development' ? 'selected' : '' }}>Web Development</option>
-                            <option value="Digital Marketing" {{ old('service_interest') == 'Digital Marketing' ? 'selected' : '' }}>Digital Marketing</option>
-                            <option value="Branding & Design" {{ old('service_interest') == 'Branding & Design' ? 'selected' : '' }}>Branding & Design</option>
-                            <option value="AI & Automation" {{ old('service_interest') == 'AI & Automation' ? 'selected' : '' }}>AI & Automation</option>
-                            <option value="Content Creation" {{ old('service_interest') == 'Content Creation' ? 'selected' : '' }}>Content Creation</option>
-                            <option value="IT Solutions" {{ old('service_interest') == 'IT Solutions' ? 'selected' : '' }}>IT Solutions</option>
+                            @foreach(trans('contact.service_options') as $key => $label)
+                                <option value="{{ $label }}" {{ old('service_interest') == $label ? 'selected' : '' }}>{{ $label }}</option>
+                            @endforeach
                         </select>
                     </div>
 
                     <div>
-                        <label for="contact-message" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">Message</label>
-                        <textarea id="contact-message" name="message" rows="4" required class="w-full bg-white rounded-md px-4 py-3 text-dark focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none" placeholder="Tell us about your project...">{{ old('message') }}</textarea>
+                        <label for="contact-message" class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">{{ trans('contact.form_label_message') }}</label>
+                        <textarea id="contact-message" name="message" rows="4" required class="w-full bg-white rounded-md px-4 py-3 text-dark focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none" placeholder="{{ trans('contact.form_placeholder_message') }}">{{ old('message') }}</textarea>
                     </div>
                     
                     <button type="submit" class="w-full h-16 bg-primary text-white rounded-md font-bold text-sm uppercase tracking-wider transition-all duration-200 hover:scale-105 hover:bg-blue-600">
-                        Send Message
+                        {{ trans('messages.btn_send') }}
                         <i class="fas fa-paper-plane ml-2"></i>
                     </button>
                 </form>

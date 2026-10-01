@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Digital Marketing Agency - Transform Your Brand')</title>
-    <meta name="description" content="@yield('description', 'Web design, SEO, ads & AI automation for SMBs in Guinea, Sierra Leone and the USA. Bilingual FR/EN team.')">
+    <title>@yield('title', trans('pages.home_hero_title') . ' | Al-Falah Marketing')</title>
+    <meta name="description" content="@yield('description', trans('pages.home_hero_subtitle'))">
     @yield('robots')
     {{--
         @section('name', 'literal string') auto-escapes its content (Laravel's

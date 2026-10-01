@@ -41,7 +41,15 @@ class ContactController extends Controller
         // 2. Create the record in the database
         Contact::create($validated);
 
-        // 3. Redirect back with a success message
-        return back()->with('success', 'Thank you! Your message has been sent.');
+        // 3. Fire tracking events (Lead event for GA4 + Meta Pixel)
+        $trackingEvent = \App\Support\Tracking::fireEvent('generate_lead', [
+            'value' => 1,
+            'currency' => 'USD',
+        ]);
+
+        // 4. Redirect back with a success message
+        return back()
+            ->with('success', 'Thank you! Your message has been sent.')
+            ->with('tracking_event', $trackingEvent);
     }
 }

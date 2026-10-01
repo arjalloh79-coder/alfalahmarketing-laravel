@@ -185,6 +185,15 @@ if (document.readyState === 'interactive' || document.readyState === 'complete')
 </script>
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    
+
+    <!-- Tracking Scripts (GA4, Meta Pixel, Clarity) -->
+    @include('components.tracking-scripts')
+
+    <!-- WhatsApp Click Tracking -->
+    @include('components.whatsapp-tracking')
+
+    <!-- Cookie Consent Banner -->
+    @include('components.cookie-consent-banner')
+
 </body>
 </html>

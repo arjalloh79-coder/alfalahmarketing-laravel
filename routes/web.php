@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\DomainController;
 use App\Http\Controllers\User\UserDomainController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\CookieConsentController;
 
 Route::get('/', [UserController::class, 'index'])->name('home');
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
@@ -22,6 +23,11 @@ Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/consultation-store', [ConsultationController::class, 'store'])->name('consultation.store');
+Route::post('/newsletter-subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+
+// Cookie consent endpoints
+Route::post('/consent/accept', [CookieConsentController::class, 'accept'])->name('consent.accept');
+Route::post('/consent/reject', [CookieConsentController::class, 'reject'])->name('consent.reject');
 
 Route::get('/blog', [UserController::class, 'blog'])->name('blog');
 Route::get('/blog/{slug}', [UserController::class, 'show'])->name('blog.show');
@@ -94,4 +100,3 @@ Route::get('/services/it-solutions', [UserController::class, 'solution'])->name(
 
 Route::get('/privacy-policies', [UserController::class, 'privacy'])->name('privacy.policy');
 Route::get('/terms-conditions', [UserController::class, 'terms'])->name('terms.conditions');
-Route::post('/newsletter-subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');

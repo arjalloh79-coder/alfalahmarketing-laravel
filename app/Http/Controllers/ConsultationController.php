@@ -29,7 +29,15 @@ class ConsultationController extends Controller
 
         Consultation::create($validated);
 
-        return back()->with('consultation_success', 'Your consultation request has been sent successfully!');
+        // Fire tracking events (Schedule event for GA4 + Meta Pixel)
+        $trackingEvent = \App\Support\Tracking::fireEvent('book_consultation', [
+            'value' => 1,
+            'currency' => 'USD',
+        ]);
+
+        return back()
+            ->with('consultation_success', 'Your consultation request has been sent successfully!')
+            ->with('tracking_event', $trackingEvent);
     }
 
     public function index()

@@ -16,8 +16,8 @@ use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\CookieConsentController;
 use App\Http\Controllers\WebhookController;
 
-// GitHub webhook (no CSRF protection needed)
-Route::post('/github-webhook', [WebhookController::class, 'handle'])->withoutMiddleware('VerifyCsrfToken');
+// GitHub webhook (CSRF exempt via bootstrap/app.php)
+Route::post('/github-webhook', [WebhookController::class, 'handle']);
 
 Route::get('/', [UserController::class, 'index'])->name('home');
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');

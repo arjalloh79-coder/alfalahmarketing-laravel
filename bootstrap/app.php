@@ -21,6 +21,11 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin' => \App\Http\Middleware\IsAdmin::class,
         ]);
 
+        // Exclude GitHub webhook from CSRF validation
+        $middleware->validateCsrfTokens(except: [
+            '/github-webhook',
+        ]);
+
         // Apply SetLocale middleware to all web routes
         $middleware->web(append: [
             SetLocale::class,

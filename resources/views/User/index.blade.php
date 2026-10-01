@@ -1,7 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Al-Falah Marketing — Digital Agency Guinea, Sierra Leone & USA')
-@section('description', 'Web design, SEO, ads & AI automation for SMBs in Guinea, Sierra Leone and the USA. Bilingual FR/EN team, WhatsApp-first support.')
+@section('title', trans('pages.home_hero_title') . ' | Al-Falah Marketing')
+@section('description', trans('pages.home_hero_subtitle'))
 
 @push('jsonld')
 {!! \App\Support\Seo::jsonLd(\App\Support\Seo::organization()) !!}
@@ -24,21 +24,20 @@
                 </div>
                 
                 <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tighter md:leading-none lg:leading-none">
-                    Transform Your Brand Into A
-                    <span class="text-accent"> Market Leader</span>
+                    {{ trans('pages.home_hero_title') }}
                 </h1>
-                
+
                 <p class="text-xl text-white/90 mb-8 leading-relaxed">
-                    We deliver data-driven marketing strategies that amplify your reach, engage your audience, and drive measurable growth.
+                    {{ trans('pages.home_hero_subtitle') }}
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#contact" class="h-16 px-8 bg-white text-primary rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:scale-105">
-                        Get Started Now
+                        {{ trans('pages.home_hero_cta') }}
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                     <a href="#services" class="h-16 px-8 border-4 border-white text-white rounded-md font-bold text-sm uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 hover:bg-white hover:text-primary">
-                        Explore Services
+                        {{ trans('messages.btn_learn_more') }}
                     </a>
                 </div>
                 
@@ -84,15 +83,15 @@
             
             <div>
                 <div class="inline-block px-4 py-2 bg-muted rounded-md mb-6">
-                    <span class="text-primary font-semibold text-sm uppercase tracking-wider">About Al-Falah</span>
+                    <span class="text-primary font-semibold text-sm uppercase tracking-wider">{{ trans('pages.about_title') }}</span>
                 </div>
-                
+
                 <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-6 tracking-tighter">
-                    We Are Your Growth Partner
+                    {{ trans('messages.footer_about_text') }}
                 </h2>
-                
+
                 <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Al-Falah Marketing helps small and growing businesses in Guinea, Sierra Leone and the USA compete online. We combine web development, digital marketing and AI automation into simple systems that bring in real customers, priced for SMB budgets.
+                    {{ trans('messages.footer_about_text') }}
                 </p>
 
                 <div class="grid grid-cols-2 gap-6 mb-8">
@@ -126,11 +125,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <div class="inline-block px-4 py-2 bg-white rounded-md mb-6">
-                <span class="text-primary font-semibold text-sm uppercase tracking-wider">What We Do</span>
+                <span class="text-primary font-semibold text-sm uppercase tracking-wider">{{ trans('messages.nav_services') }}</span>
             </div>
-            
+
             <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-6 tracking-tighter">
-                Our Services
+                {{ trans('pages.home_features_title') }}
             </h2>
             
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">

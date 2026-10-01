@@ -15,7 +15,7 @@
                     </span>
                 </div>
                 <p class="text-gray-400 mb-6 leading-relaxed">
-                    Transform your brand with data-driven marketing strategies that deliver real results.
+                    {{ trans('messages.footer_about_text') }}
                 </p>
                 <div class="mb-6">
                     @include('partials.contact-info', ['style' => 'dark'])
@@ -42,44 +42,44 @@
 
             <!-- Quick Links -->
             <div>
-                <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">Quick Links</h3>
+                <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">{{ trans('messages.footer_services') }}</h3>
                 <ul class="space-y-3">
                     <li><a href="{{ route('home') }}"
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">Home</a></li>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('messages.nav_home') }}</a></li>
                     <li><a href="{{ route('about') }}"
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">About Us</a></li>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('messages.nav_about') }}</a></li>
                     <li><a href="{{ route('service') }}"
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">Services</a></li>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('messages.nav_services') }}</a></li>
                     <li><a href=""
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">Portfolio</a></li>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('messages.nav_portfolio') }}</a></li>
                     <li><a href="{{ route('blog') }}"
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">Blog</a></li>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('messages.nav_blog') }}</a></li>
                     <li><a href="{{ route('contact') }}"
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">Contact</a></li>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('messages.nav_contact') }}</a></li>
                 </ul>
             </div>
 
             <!-- Services -->
             <div>
-                <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">Services</h3>
+                <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">{{ trans('messages.footer_services') }}</h3>
                 <ul class="space-y-3">
                     <li><a href="{{ route('services.web-development') }}"
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">Web Development</a>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('services.web_title') }}</a>
                     </li>
                     <li><a href="{{ route('services.digital-marketing') }}"
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">Digital Marketing</a>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('services.social_title') }}</a>
                     </li>
                     <li><a href="{{ route('services.branding') }}"
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">Branding & Design</a>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('services.branding_title') }}</a>
                     </li>
                     <li><a href="{{ route('services.automation') }}"
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">AI & Automation</a>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('services.automation_title') }}</a>
                     </li>
                     <li><a href="{{ route('services.content') }}"
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">Content Creation</a>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('services.content_title') }}</a>
                     </li>
                     <li><a href="{{ route('services.solution') }}"
-                            class="text-gray-400 hover:text-primary transition-colors font-medium">IT Solutions</a></li>
+                            class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('services.solutions_title') }}</a></li>
                 </ul>
             </div>
 
@@ -96,8 +96,8 @@
                         {{ $errors->first() }}
                     </div>
                 @endif
-                <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">Newsletter</h3>
-                <p class="text-gray-400 mb-4">Subscribe to get latest marketing tips and insights.</p>
+                <h3 class="text-lg font-bold mb-6 uppercase tracking-wider">{{ trans('messages.footer_subscribe_heading') }}</h3>
+                <p class="text-gray-400 mb-4">{{ trans('messages.footer_subscribe_text') }}</p>
                 <form action="{{ route('newsletter.subscribe') }}" method="POST" class="space-y-3">
                     @csrf
                     @include('components.spam-protection')
@@ -120,13 +120,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
                 <p class="text-gray-400 text-sm">
-                    © 2026 Al-Falah Marketing. All rights reserved.
+                    {{ trans('messages.footer_copyright') }}
                 </p>
                 <div class="flex space-x-6 text-sm">
                     <a href="{{ route('privacy.policy') }}"
-                        class="text-gray-400 hover:text-primary transition-colors font-medium">Privacy Policy</a>
+                        class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('messages.footer_privacy') }}</a>
                     <a href="{{ route('terms.conditions') }}"
-                        class="text-gray-400 hover:text-primary transition-colors font-medium">Terms of Service</a>
+                        class="text-gray-400 hover:text-primary transition-colors font-medium">{{ trans('messages.footer_terms') }}</a>
                     {{-- <a href="#" class="text-gray-400 hover:text-primary transition-colors font-medium">Cookie Policy</a> --}}
                 </div>
             </div>

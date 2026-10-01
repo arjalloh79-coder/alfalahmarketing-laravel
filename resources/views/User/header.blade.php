@@ -45,17 +45,17 @@
             <!-- Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x-8">
                 <a href="{{ route('home') }}"
-                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">Home</a>
+                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">{{ trans('messages.nav_home') }}</a>
                 <a href="{{ route('about') }}"
-                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">About</a>
+                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">{{ trans('messages.nav_about') }}</a>
                 <a href="{{ route('service') }}"
-                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">Services</a>
+                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">{{ trans('messages.nav_services') }}</a>
                 <a href="{{ route('portfolio') }}"
-                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">Portfolio</a>
+                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">{{ trans('messages.nav_portfolio') }}</a>
                 <a href="{{ route('blog') }}"
-                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">Blog</a>
+                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">{{ trans('messages.nav_blog') }}</a>
                 <a href="{{ route('contact') }}"
-                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">Contact</a>
+                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">{{ trans('messages.nav_contact') }}</a>
             </nav>
 
             <!-- Desktop Right Side Buttons / Dashboard Icon -->
@@ -109,17 +109,17 @@
 
             <nav class="flex-1 px-6 py-8 space-y-4 overflow-y-auto">
                 <a href="{{ route('home') }}" onclick="toggleMobileMenu()"
-                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">Home</a>
+                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">{{ trans('messages.nav_home') }}</a>
                 <a href="{{ route('about') }}" onclick="toggleMobileMenu()"
-                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider"> About </a>
+                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">{{ trans('messages.nav_about') }}</a>
                 <a href="{{ route('service') }}" onclick="toggleMobileMenu()"
-                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">Services</a>
+                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">{{ trans('messages.nav_services') }}</a>
                 <a href="{{ route('portfolio') }}" onclick="toggleMobileMenu()"
-                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">Portfolio</a>
+                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">{{ trans('messages.nav_portfolio') }}</a>
                 <a href="{{ route('blog') }}" onclick="toggleMobileMenu()"
-                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">Blog</a>
+                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">{{ trans('messages.nav_blog') }}</a>
                 <a href="{{ route('contact') }}" onclick="toggleMobileMenu()"
-                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">Contact</a>
+                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">{{ trans('messages.nav_contact') }}</a>
             </nav>
 
             <!-- Mobile Language Switcher -->

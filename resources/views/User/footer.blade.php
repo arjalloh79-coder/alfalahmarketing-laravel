@@ -100,6 +100,7 @@
                 <p class="text-gray-400 mb-4">Subscribe to get latest marketing tips and insights.</p>
                 <form action="{{ route('newsletter.subscribe') }}" method="POST" class="space-y-3">
                     @csrf
+                    @include('components.spam-protection')
 
                     <input type="email" name="email" placeholder="Your email" required
                         class="w-full h-12 bg-white/10 rounded-md px-4 text-white placeholder-gray-500 focus:bg-white/20 focus:outline-none focus:ring-2 focus:ring-primary transition-all">

@@ -58,6 +58,7 @@
             <div class="bg-muted rounded-lg p-8">
                 <form action="{{ route('contact.store') }}" method="POST" class="space-y-6">
                     @csrf
+                    @include('components.spam-protection')
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-bold text-dark mb-2 uppercase tracking-wider">First Name</label>

@@ -12,6 +12,12 @@ class ConsultationController extends Controller
 {
     public function store(Request $request)
     {
+        // Check for spam (honeypot + time-trap + optional Turnstile)
+        if (! \App\Support\SpamProtection::validate($request)) {
+            // Silently reject spam without revealing detection method
+            return back()->with('consultation_success', 'Your consultation request has been sent successfully!');
+        }
+
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',

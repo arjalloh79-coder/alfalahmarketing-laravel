@@ -9,6 +9,12 @@ class NewsletterController extends Controller
 {
      public function subscribe(Request $request)
     {
+        // Check for spam (honeypot + time-trap + optional Turnstile)
+        if (! \App\Support\SpamProtection::validate($request)) {
+            // Silently reject spam without revealing detection method
+            return back()->with('success', 'Thank you for subscribing!');
+        }
+
         $request->validate([
             'email' => 'required|email|unique:newsletter_subscribers,email',
         ]);

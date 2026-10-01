@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Support\SpamProtection;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -21,6 +22,12 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
+        // 0. Check for spam (honeypot + time-trap + optional Turnstile)
+        if (! SpamProtection::validate($request)) {
+            // Silently reject spam without revealing detection method
+            return back()->with('success', 'Thank you! Your message has been sent.');
+        }
+
         // 1. Validate the input
         $validated = $request->validate([
             'first_name' => 'required|string|max:50',

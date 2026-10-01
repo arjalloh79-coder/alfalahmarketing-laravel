@@ -3,133 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Log;
 
 class WebhookController extends Controller
 {
-    /**
-     * Handle incoming GitHub webhook
-     */
-    public function handle(Request $request): JsonResponse
+    public function handle(Request $request)
     {
-        // Verify GitHub webhook signature
+        // Optional: Verify secret signature from GitHub header
         $signature = $request->header('X-Hub-Signature-256');
-        $payload = $request->getContent();
+        $secret = config('services.github.webhook_secret'); // Store in .env as GITHUB_WEBHOOK_SECRET
 
-        if (!$this->verifyWebhookSignature($payload, $signature)) {
-            return response()->json(['error' => 'Invalid signature'], 401);
+        if ($secret && $signature) {
+            $knownSignature = 'sha256=' . hash_hmac('sha256', $request->getContent(), $secret);
+            if (!hash_equals($knownSignature, $signature)) {
+                return response()->json(['message' => 'Invalid signature'], 403);
+            }
         }
 
-        $data = json_decode($payload, true);
+        // Log or process the webhook event payload
+        $event = $request->header('X-GitHub-Event');
+        Log::info("GitHub Webhook received event: {$event}");
 
-        // Handle push events only
-        if ($request->header('X-GitHub-Event') === 'push') {
-            return $this->handlePushEvent($data);
-        }
-
-        // Handle pull request events
-        if ($request->header('X-GitHub-Event') === 'pull_request') {
-            return $this->handlePullRequestEvent($data);
-        }
-
-        return response()->json(['status' => 'received'], 200);
-    }
-
-    /**
-     * Handle push events from GitHub
-     */
-    private function handlePushEvent(array $data): JsonResponse
-    {
-        $branch = str_replace('refs/heads/', '', $data['ref'] ?? '');
-        $repository = $data['repository']['name'] ?? 'unknown';
-        $pusher = $data['pusher']['name'] ?? 'unknown';
-        $commits = $data['commits'] ?? [];
-
-        // Only process main branch pushes
-        if ($branch !== 'main') {
-            return response()->json([
-                'status' => 'ignored',
-                'message' => "Branch '{$branch}' is not main"
-            ], 200);
-        }
-
-        \Log::info('GitHub webhook received', [
-            'event' => 'push',
-            'repository' => $repository,
-            'branch' => $branch,
-            'pusher' => $pusher,
-            'commits_count' => count($commits),
-            'timestamp' => now(),
-        ]);
-
-        // Log commit details
-        foreach ($commits as $commit) {
-            \Log::info('Commit pushed', [
-                'id' => $commit['id'],
-                'message' => $commit['message'],
-                'author' => $commit['author']['name'] ?? 'unknown',
-                'timestamp' => $commit['timestamp'],
+        // Example: Trigger deployment/git pull on Hostinger (if needed)
+        if ($event === 'push') {
+            Log::info('Push event received from GitHub', [
+                'branch' => $request->input('ref'),
+                'repository' => $request->input('repository.name'),
+                'pusher' => $request->input('pusher.name'),
             ]);
+            // Execute deployment commands or dispatch a job here
         }
 
-        return response()->json([
-            'status' => 'success',
-            'message' => "Received {$branch} branch push from {$pusher}",
-            'commits' => count($commits),
-        ], 200);
-    }
-
-    /**
-     * Handle pull request events from GitHub
-     */
-    private function handlePullRequestEvent(array $data): JsonResponse
-    {
-        $action = $data['action'] ?? 'unknown';
-        $pr = $data['pull_request'] ?? [];
-        $repository = $data['repository']['name'] ?? 'unknown';
-        $prNumber = $pr['number'] ?? 'unknown';
-        $prTitle = $pr['title'] ?? 'unknown';
-        $prAuthor = $pr['user']['login'] ?? 'unknown';
-
-        \Log::info('GitHub webhook received', [
-            'event' => 'pull_request',
-            'action' => $action,
-            'repository' => $repository,
-            'pr_number' => $prNumber,
-            'pr_title' => $prTitle,
-            'author' => $prAuthor,
-            'timestamp' => now(),
-        ]);
-
-        return response()->json([
-            'status' => 'success',
-            'message' => "PR #{$prNumber} {$action}: {$prTitle}",
-            'pr_author' => $prAuthor,
-        ], 200);
-    }
-
-    /**
-     * Verify webhook signature from GitHub
-     */
-    private function verifyWebhookSignature(string $payload, ?string $signature): bool
-    {
-        // Get webhook secret from environment
-        $secret = config('services.github.webhook_secret');
-
-        // If no secret configured, log warning but allow for testing
-        if (!$secret) {
-            \Log::warning('GitHub webhook secret not configured in .env');
-            return true; // Allow unsigned webhooks in development
-        }
-
-        // GitHub uses HMAC-SHA256
-        if (!$signature || !str_starts_with($signature, 'sha256=')) {
-            return false;
-        }
-
-        $expected = 'sha256=' . hash_hmac('sha256', $payload, $secret);
-
-        // Use hash_equals to prevent timing attacks
-        return hash_equals($expected, $signature);
+        return response()->json(['status' => 'success'], 200);
     }
 }

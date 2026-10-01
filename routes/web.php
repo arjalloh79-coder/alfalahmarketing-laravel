@@ -14,6 +14,10 @@ use App\Http\Controllers\User\UserDomainController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\CookieConsentController;
+use App\Http\Controllers\WebhookController;
+
+// GitHub webhook (no CSRF protection needed)
+Route::post('/github-webhook', [WebhookController::class, 'handle'])->withoutMiddleware('VerifyCsrfToken');
 
 Route::get('/', [UserController::class, 'index'])->name('home');
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');

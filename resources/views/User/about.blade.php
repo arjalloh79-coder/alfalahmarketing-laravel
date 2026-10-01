@@ -1,7 +1,7 @@
 @extends('User.main')
 
-@section('title', 'About Al-Falah Marketing — Our Story & Founder')
-@section('description', 'Meet Al-Falah Marketing, founded by Abdulrahman Jalloh: web development, digital marketing and AI automation for SMBs in Guinea, Sierra Leone & the USA.')
+@section('title', trans('about.about_heading') . ' | Al-Falah Marketing')
+@section('description', trans('about.section_story_text'))
 
 @section('main-section')
 
@@ -13,13 +13,13 @@
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div class="inline-block px-4 py-2 bg-white/20 rounded-md mb-6">
-            <span class="text-white font-semibold text-sm uppercase tracking-wider">Our Story</span>
+            <span class="text-white font-semibold text-sm uppercase tracking-wider">{{ trans('about.section_story_title') }}</span>
         </div>
         <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tighter md:leading-none">
-            Bridging the Gap Between <span class="text-accent">Vision & Reality</span>
+            {{ trans('about.about_heading') }}
         </h1>
         <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Helping small businesses in the USA and Africa compete and grow through modern digital solutions and data-driven strategies.
+            {{ trans('about.about_tagline') }}
         </p>
     </div>
 </section>
@@ -30,14 +30,14 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
                 <div class="inline-block px-4 py-2 bg-muted rounded-md mb-6">
-                    <span class="text-primary font-semibold text-sm uppercase tracking-wider">Who We Help</span>
+                    <span class="text-primary font-semibold text-sm uppercase tracking-wider">{{ trans('about.section_mission_title') }}</span>
                 </div>
-                <h2 class="text-4xl font-bold text-dark mb-6 tracking-tighter">Empowering Small Businesses Across Continents</h2>
+                <h2 class="text-4xl font-bold text-dark mb-6 tracking-tighter">{{ trans('about.section_mission_title') }}</h2>
                 <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                    At Al-Falah Marketing, we recognized a common problem: small businesses in the USA and Africa often have incredible products but lack the modern digital tools to reach their full potential.
+                    {{ trans('about.section_story_text') }}
                 </p>
                 <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Our mission is to solve that. We provide the same high-level digital strategy used by major corporations but tailored to the budget and scale of growing enterprises. Whether you are a local shop in New York or a startup in Freetown, we bring your brand to the global stage.
+                    {{ trans('about.section_mission_text') }}
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <div class="flex items-center space-x-2 text-dark font-bold">
@@ -70,9 +70,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <div class="inline-block px-4 py-2 bg-white rounded-md mb-6">
-                <span class="text-primary font-semibold text-sm uppercase tracking-wider">The Al-Falah Advantage</span>
+                <span class="text-primary font-semibold text-sm uppercase tracking-wider">{{ trans('about.section_why_us_title') }}</span>
             </div>
-            <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-6 tracking-tighter">Why Al-Falah Marketing?</h2>
+            <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-6 tracking-tighter">{{ trans('about.section_why_us_title') }}</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

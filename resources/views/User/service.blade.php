@@ -1,7 +1,7 @@
 @extends('User.main')
 
-@section('title', 'Web, Marketing & AI Services for SMBs — Al-Falah')
-@section('description', 'Web development, digital marketing, branding, automation, content creation and IT solutions for SMBs in Guinea, Sierra Leone and the USA.')
+@section('title', trans('pages.home_features_title') . ' | Al-Falah Marketing')
+@section('description', trans('pages.home_features_subtitle'))
 
 <!-- Include Swiper.js for the Slider -->
 @section('styles')
@@ -21,13 +21,13 @@
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div class="inline-block px-4 py-2 bg-white/20 rounded-md mb-6">
-            <span class="text-white font-semibold text-sm uppercase tracking-wider">What We Offer</span>
+            <span class="text-white font-semibold text-sm uppercase tracking-wider">{{ trans('messages.nav_services') }}</span>
         </div>
         <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tighter md:leading-none">
-            Helping Small Businesses Get <span class="text-accent">More Customers</span>
+            {{ trans('pages.home_features_title') }}
         </h1>
         <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            We build professional websites and digital marketing systems that help businesses in the USA and Africa attract, convert, and retain customers using Websites, SEO & AI-Powered Marketing.
+            {{ trans('pages.home_features_subtitle') }}
         </p>
     </div>
 </section>
@@ -35,9 +35,9 @@
 <!-- FULL-STACK PARTNER INTRO -->
 <section class="py-16 bg-white border-b border-gray-100">
     <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6 tracking-tighter">A full-stack marketing partner</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6 tracking-tighter">{{ trans('pages.home_features_title') }}</h2>
         <p class="text-xl text-gray-600 leading-relaxed">
-            Six core services — one unified team. From strategy through execution and measurement, we handle every touchpoint of your digital ecosystem.
+            {{ trans('pages.home_features_subtitle') }}
         </p>
     </div>
 </section>
@@ -52,18 +52,18 @@
                 <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-8">
                     <i class="fas fa-code text-white text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-dark mb-4">Web Development</h3>
+                <h3 class="text-2xl font-bold text-dark mb-4">{{ trans('services.web_title') }}</h3>
                 <p class="text-gray-600 leading-relaxed">
-                    Custom-coded, high-performance websites. We build lightning-fast, mobile-friendly sites designed to convert visitors into customers 24/7.
+                    {{ trans('services.web_description') }}
                 </p>
                 <ul class="mt-6 space-y-2 text-sm text-gray-700 font-semibold">
-                    <li><i class="fas fa-check text-primary mr-2"></i> Custom Web Apps</li>
-                    <li><i class="fas fa-check text-primary mr-2"></i> E-commerce Solutions</li>
-                    <li><i class="fas fa-check text-primary mr-2"></i> CMS Integration</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i> {{ trans('services.web_features_1') }}</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i> {{ trans('services.web_features_2') }}</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i> {{ trans('services.web_features_3') }}</li>
                 </ul>
                  <!-- Know More Button -->
                 <a href="{{ route('services.web-development') }}" class="mt-6 inline-flex items-center text-primary font-bold hover:text-blue-700 transition group">
-                    <span>Know More</span>
+                    <span>{{ trans('messages.btn_learn_more') }}</span>
                     <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
@@ -73,19 +73,19 @@
                 <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mb-8">
                     <i class="fas fa-bullhorn text-white text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-dark mb-4">Digital Marketing</h3>
+                <h3 class="text-2xl font-bold text-dark mb-4">{{ trans('services.social_title') }}</h3>
                 <p class="text-gray-600 leading-relaxed">
-                    Data-driven growth strategies. From Local SEO to Google Ads, we ensure your business ranks high and gets found by the right audience.
+                    {{ trans('services.social_description') }}
                 </p>
                 <ul class="mt-6 space-y-2 text-sm text-gray-700 font-semibold">
-                    <li><i class="fas fa-check text-secondary mr-2"></i> SEO & SEM</li>
-                    <li><i class="fas fa-check text-secondary mr-2"></i> Social Media Ads</li>
-                    <li><i class="fas fa-check text-secondary mr-2"></i> Email Marketing</li>
+                    <li><i class="fas fa-check text-secondary mr-2"></i> {{ trans('services.social_features_1') }}</li>
+                    <li><i class="fas fa-check text-secondary mr-2"></i> {{ trans('services.social_features_2') }}</li>
+                    <li><i class="fas fa-check text-secondary mr-2"></i> {{ trans('services.social_features_3') }}</li>
                 </ul>
 
                  <!-- Know More Button -->
                 <a href="{{ route('services.digital-marketing') }}" class="mt-6 inline-flex items-center text-primary font-bold hover:text-blue-700 transition group">
-                    <span>Know More</span>
+                    <span>{{ trans('messages.btn_learn_more') }}</span>
                     <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                 </a>
 
@@ -97,21 +97,21 @@
                 <div class="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mb-8">
                     <i class="fas fa-palette text-white text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-dark mb-4">Branding & Design</h3>
+                <h3 class="text-2xl font-bold text-dark mb-4">{{ trans('services.branding_title') }}</h3>
                 <p class="text-gray-600 leading-relaxed">
-                    We create visual identities that tell your story. Professional logos, UI/UX design, and brand guidelines that build trust and authority.
+                    {{ trans('services.branding_description') }}
                 </p>
                 <ul class="mt-6 space-y-2 text-sm text-gray-700 font-semibold">
-                    <li><i class="fas fa-check text-accent mr-2"></i> Logo & Visual Identity</li>
-                    <li><i class="fas fa-check text-accent mr-2"></i> UI/UX Design</li>
-                    <li><i class="fas fa-check text-accent mr-2"></i> Marketing Collateral</li>
+                    <li><i class="fas fa-check text-accent mr-2"></i> {{ trans('services.branding_features_1') }}</li>
+                    <li><i class="fas fa-check text-accent mr-2"></i> {{ trans('services.branding_features_2') }}</li>
+                    <li><i class="fas fa-check text-accent mr-2"></i> {{ trans('services.branding_features_3') }}</li>
                 </ul>
-                
+
                  <a href="{{ route('services.branding') }}" class="mt-6 inline-flex items-center text-primary font-bold hover:text-blue-700 transition group">
-                    <span>Know More</span>
+                    <span>{{ trans('messages.btn_learn_more') }}</span>
                     <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                 </a>
-                
+
             </div>
 
             <!-- Service 4: AI & Automation -->
@@ -119,21 +119,21 @@
                 <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-8">
                     <i class="fas fa-microchip text-white text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-dark mb-4">AI & Automation</h3>
+                <h3 class="text-2xl font-bold text-dark mb-4">{{ trans('services.automation_title') }}</h3>
                 <p class="text-gray-600 leading-relaxed">
-                    Work smarter, not harder. We implement AI chatbots and automated lead nurture workflows to save you hours of manual work every day.
+                    {{ trans('services.automation_description') }}
                 </p>
                 <ul class="mt-6 space-y-2 text-sm text-gray-700 font-semibold">
-                    <li><i class="fas fa-check text-primary mr-2"></i> AI Chatbots</li>
-                    <li><i class="fas fa-check text-primary mr-2"></i> CRM Automation</li>
-                    <li><i class="fas fa-check text-primary mr-2"></i> Workflow Optimization</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i> {{ trans('services.automation_features_1') }}</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i> {{ trans('services.automation_features_2') }}</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i> {{ trans('services.automation_features_3') }}</li>
                 </ul>
 
                   <a href="{{ route('services.automation') }}" class="mt-6 inline-flex items-center text-primary font-bold hover:text-blue-700 transition group">
-                    <span>Know More</span>
+                    <span>{{ trans('messages.btn_learn_more') }}</span>
                     <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                 </a>
-                
+
 
             </div>
 
@@ -142,18 +142,18 @@
                 <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mb-8">
                     <i class="fas fa-pen-nib text-white text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-dark mb-4">Content Creation</h3>
+                <h3 class="text-2xl font-bold text-dark mb-4">{{ trans('services.content_title') }}</h3>
                 <p class="text-gray-600 leading-relaxed">
-                    Content that converts. Our team produces high-quality blogs, videos, and social media content that positions you as a leader in your industry.
+                    {{ trans('services.content_description') }}
                 </p>
                 <ul class="mt-6 space-y-2 text-sm text-gray-700 font-semibold">
-                    <li><i class="fas fa-check text-secondary mr-2"></i> Video Marketing</li>
-                    <li><i class="fas fa-check text-secondary mr-2"></i> Blog & Copywriting</li>
-                    <li><i class="fas fa-check text-secondary mr-2"></i> Graphics Production</li>
+                    <li><i class="fas fa-check text-secondary mr-2"></i> {{ trans('services.content_features_1') }}</li>
+                    <li><i class="fas fa-check text-secondary mr-2"></i> {{ trans('services.content_features_2') }}</li>
+                    <li><i class="fas fa-check text-secondary mr-2"></i> {{ trans('services.content_features_3') }}</li>
                 </ul>
 
                 <a href="{{ route('services.content') }}" class="mt-6 inline-flex items-center text-primary font-bold hover:text-blue-700 transition group">
-                    <span>Know More</span>
+                    <span>{{ trans('messages.btn_learn_more') }}</span>
                     <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
@@ -163,18 +163,18 @@
                 <div class="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mb-8">
                     <i class="fas fa-server text-white text-3xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-dark mb-4">IT Solutions</h3>
+                <h3 class="text-2xl font-bold text-dark mb-4">{{ trans('services.solutions_title') }}</h3>
                 <p class="text-gray-600 leading-relaxed">
-                    Reliable tech support for your growth. From secure cloud hosting to enterprise IT management, we keep your digital operations running smooth.
+                    {{ trans('services.solutions_description') }}
                 </p>
                 <ul class="mt-6 space-y-2 text-sm text-gray-700 font-semibold">
-                    <li><i class="fas fa-check text-accent mr-2"></i> Cloud Hosting</li>
-                    <li><i class="fas fa-check text-accent mr-2"></i> Cyber Security</li>
-                    <li><i class="fas fa-check text-accent mr-2"></i> Tech Support</li>
+                    <li><i class="fas fa-check text-accent mr-2"></i> {{ trans('services.solutions_features_1') }}</li>
+                    <li><i class="fas fa-check text-accent mr-2"></i> {{ trans('services.solutions_features_2') }}</li>
+                    <li><i class="fas fa-check text-accent mr-2"></i> {{ trans('services.solutions_features_3') }}</li>
                 </ul>
 
                  <a href="{{ route('services.solution') }}" class="mt-6 inline-flex items-center text-primary font-bold hover:text-blue-700 transition group">
-                    <span>Know More</span>
+                    <span>{{ trans('messages.btn_learn_more') }}</span>
                     <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>

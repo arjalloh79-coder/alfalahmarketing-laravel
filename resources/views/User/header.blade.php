@@ -63,19 +63,19 @@
                 <!-- Language Switcher -->
                 @include('components.language-switcher')
                 @guest
-                    <!-- अगर यूजर लॉग इन नहीं है तो ये बटन दिखेंगे -->
+                    <!-- Guest users see login/signup buttons -->
                     <a href="{{ route('login') }}"
                         class="px-6 h-12 border-2 border-primary text-primary rounded-md font-semibold text-sm uppercase tracking-wider flex items-center justify-center transition-all duration-200 hover:bg-primary hover:text-white">
-                        Login
+                        {{ trans('messages.btn_login') }}
                     </a>
                     <a href="{{ route('signup') }}"
                         class="px-6 h-12 bg-primary text-white rounded-md font-semibold text-sm uppercase tracking-wider flex items-center justify-center transition-all duration-200 hover:scale-105 hover:bg-blue-600">
-                      Signup
+                      {{ trans('messages.btn_signup') }}
                     </a>
                 @endguest
 
                 @auth
-                    <!-- अगर यूजर लॉग इन है तो केवल उसका नाम और डैशबोर्ड लिंक आइकॉन दिखेगा -->
+                    <!-- Authenticated users see dashboard link with avatar -->
                     <a href="{{ Auth::user()->role === 'admin' ? route('admin.index') : route('user.dashboard') }}"
                         class="flex items-center space-x-3 px-4 h-12 bg-muted hover:bg-gray-200 text-dark rounded-md font-bold text-sm uppercase tracking-wider transition-colors duration-200">
                         <div

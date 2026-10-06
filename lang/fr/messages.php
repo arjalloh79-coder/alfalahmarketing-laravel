@@ -13,6 +13,8 @@ return [
     'nav_login' => 'Connexion', // REVIEW
 
     // Buttons & CTAs
+    'btn_login' => 'Connexion', // REVIEW
+    'btn_signup' => 'Inscription', // REVIEW
     'btn_learn_more' => 'En Savoir Plus', // REVIEW
     'btn_get_started' => 'Commencer Maintenant', // REVIEW
     'btn_contact_us' => 'Nous Contacter', // REVIEW
@@ -61,4 +63,7 @@ return [
     'language' => 'Langue', // REVIEW
     'menu' => 'Menu', // REVIEW
     'search' => 'Rechercher', // REVIEW
+
+    // Chat & Contact
+    'whatsapp_tooltip' => 'Discutez avec nous !', // REVIEW
 ];

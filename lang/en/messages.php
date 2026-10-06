@@ -13,6 +13,8 @@ return [
     'nav_login' => 'Login', // REVIEW
 
     // Buttons & CTAs
+    'btn_login' => 'Login', // REVIEW
+    'btn_signup' => 'Signup', // REVIEW
     'btn_learn_more' => 'Learn More', // REVIEW
     'btn_get_started' => 'Get Started Today', // REVIEW
     'btn_contact_us' => 'Contact Us', // REVIEW
@@ -61,4 +63,7 @@ return [
     'language' => 'Language', // REVIEW
     'menu' => 'Menu', // REVIEW
     'search' => 'Search', // REVIEW
+
+    // Chat & Contact
+    'whatsapp_tooltip' => 'Chat with us!', // REVIEW
 ];

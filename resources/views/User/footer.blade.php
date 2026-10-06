@@ -108,7 +108,7 @@
 
                     <button type="submit"
                         class="w-full h-12 bg-primary text-white rounded-md font-bold text-sm uppercase tracking-wider transition-all duration-200 hover:scale-105 hover:bg-blue-600">
-                        Subscribe
+                        {{ trans('messages.btn_subscribe') }}
                     </button>
                 </form>
             </div>
@@ -147,7 +147,7 @@
     <!-- Tooltip -->
     <span
         class="absolute left-20 bg-white text-dark text-xs font-bold px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-xl whitespace-nowrap pointer-events-none">
-        Chat with us!
+        {{ trans('messages.whatsapp_tooltip') }}
         <span class="absolute top-1/2 -left-1 -translate-y-1/2 border-8 border-transparent border-r-white"></span>
     </span>
 </a>

@@ -1,27 +1,28 @@
 <!-- Hreflang Alternates for Multilingual SEO -->
 @php
-    $root = rtrim(request()->root(), '/');
+    $baseUrl = 'https://al-falahmarketing.com';
     $currentPath = request()->path();
 
     // Generate correct URLs for both languages
     if (str_starts_with($currentPath, 'fr/')) {
         // Currently on /fr/something
-        $enUrl = $root . '/' . substr($currentPath, 3);
-        $frUrl = $root . '/' . $currentPath;
+        $enPath = substr($currentPath, 3);
+        $enUrl = $baseUrl . '/' . $enPath;
+        $frUrl = $baseUrl . '/' . $currentPath;
     } elseif ($currentPath === 'fr') {
         // Currently on /fr root
-        $enUrl = $root;
-        $frUrl = $root . '/fr';
+        $enUrl = $baseUrl;
+        $frUrl = $baseUrl . '/fr';
     } else {
         // Currently on EN path (including root /)
-        if ($currentPath === '') {
+        if ($currentPath === '' || $currentPath === '/') {
             // Root homepage
-            $enUrl = $root;
-            $frUrl = $root . '/fr';
+            $enUrl = $baseUrl;
+            $frUrl = $baseUrl . '/fr';
         } else {
             // Other EN pages
-            $enUrl = $root . '/' . $currentPath;
-            $frUrl = $root . '/fr/' . ltrim($currentPath, '/');
+            $enUrl = $baseUrl . '/' . $currentPath;
+            $frUrl = $baseUrl . '/fr/' . ltrim($currentPath, '/');
         }
     }
 @endphp

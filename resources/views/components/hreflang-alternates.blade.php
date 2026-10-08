@@ -1,6 +1,6 @@
 <!-- Hreflang Alternates for Multilingual SEO -->
 @php
-    $root = request()->root();
+    $root = rtrim(request()->root(), '/');
     $currentPath = request()->path();
 
     // Generate correct URLs for both languages

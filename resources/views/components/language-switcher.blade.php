@@ -5,15 +5,19 @@
         $currentPath = request()->path();
 
         // Generate URLs for EN and FR
-        // Remove /fr prefix if present for English link
-        $enPath = str_starts_with($currentPath, 'fr/')
-            ? '/' . substr($currentPath, 3)
-            : '/' . $currentPath;
-
-        // Add /fr prefix if not present for French link
-        $frPath = str_starts_with($currentPath, 'fr/')
-            ? '/' . $currentPath
-            : '/fr/' . ltrim($currentPath, '/');
+        if (str_starts_with($currentPath, 'fr/')) {
+            // Currently on /fr/something - remove fr prefix for EN
+            $enPath = '/' . substr($currentPath, 3);
+            $frPath = '/' . $currentPath;
+        } elseif ($currentPath === 'fr') {
+            // Currently on /fr root - go to / for EN
+            $enPath = '/';
+            $frPath = '/fr';
+        } else {
+            // Currently on EN path - add fr prefix for FR
+            $enPath = '/' . $currentPath;
+            $frPath = $currentPath === '/' ? '/fr' : '/fr/' . ltrim($currentPath, '/');
+        }
     @endphp
 
     <!-- English Button -->

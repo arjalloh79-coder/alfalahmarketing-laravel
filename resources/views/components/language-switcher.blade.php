@@ -2,27 +2,41 @@
 <div class="language-switcher flex items-center gap-2">
     @php
         $currentLocale = app()->getLocale();
-        $langs = LaravelLocalization::getSupportedLocales();
+        $currentPath = request()->path();
+
+        // Generate URLs for EN and FR
+        // Remove /fr prefix if present for English link
+        $enPath = str_starts_with($currentPath, 'fr/')
+            ? '/' . substr($currentPath, 3)
+            : '/' . $currentPath;
+
+        // Add /fr prefix if not present for French link
+        $frPath = str_starts_with($currentPath, 'fr/')
+            ? '/' . $currentPath
+            : '/fr/' . ltrim($currentPath, '/');
     @endphp
 
-    @foreach($langs as $langKey => $lang)
-        @php
-            $isActive = $currentLocale === $langKey;
-            $url = LaravelLocalization::getLocalizedURL($langKey);
-            $flag = $langKey === 'en' ? '🇬🇧' : '🇫🇷';
-            $label = $langKey === 'en' ? 'EN' : 'FR';
-        @endphp
+    <!-- English Button -->
+    <a href="{{ url($enPath) }}"
+       class="lang-switcher-btn px-3 py-2 rounded transition-all text-sm font-medium
+              {{ $currentLocale === 'en'
+                 ? 'bg-primary text-white'
+                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200' }}"
+       aria-label="Switch to English"
+       title="English">
+        <span class="mr-1">🇬🇧</span>EN
+    </a>
 
-        <a href="{{ $url }}"
-           class="lang-switcher-btn px-3 py-2 rounded transition-all text-sm font-medium
-                  {{ $isActive 
-                     ? 'bg-primary text-white' 
-                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200' }}"
-           aria-label="Switch to {{ $lang['name'] }}"
-           title="Switch to {{ $lang['name'] }}">
-            <span class="mr-1">{{ $flag }}</span>{{ $label }}
-        </a>
-    @endforeach
+    <!-- French Button -->
+    <a href="{{ url($frPath) }}"
+       class="lang-switcher-btn px-3 py-2 rounded transition-all text-sm font-medium
+              {{ $currentLocale === 'fr'
+                 ? 'bg-primary text-white'
+                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200' }}"
+       aria-label="Switch to French"
+       title="Français">
+        <span class="mr-1">🇫🇷</span>FR
+    </a>
 </div>
 
 <style>

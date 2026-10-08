@@ -1,19 +1,28 @@
 <!-- Hreflang Alternates for Multilingual SEO -->
 @php
-    $currentUrl = url()->current();
-    $currentLocale = app()->getLocale();
-    
-    // Get all supported locales
-    $langs = LaravelLocalization::getSupportedLocales();
+    $currentPath = request()->path();
+
+    // Generate correct URLs for both languages
+    if (str_starts_with($currentPath, 'fr/')) {
+        // Currently on /fr/something
+        $enUrl = url('/' . substr($currentPath, 3));
+        $frUrl = url('/' . $currentPath);
+    } elseif ($currentPath === 'fr') {
+        // Currently on /fr root
+        $enUrl = url('/');
+        $frUrl = url('/fr');
+    } else {
+        // Currently on EN path
+        $enUrl = url('/' . $currentPath);
+        $frUrl = $currentPath === '' ? url('/fr') : url('/fr/' . ltrim($currentPath, '/'));
+    }
 @endphp
 
-@foreach($langs as $langKey => $lang)
-    @php
-        // Generate localized URL for this language
-        $localizedUrl = LaravelLocalization::getLocalizedURL($langKey, $currentUrl);
-    @endphp
-    <link rel="alternate" hreflang="{{ $langKey }}" href="{{ $localizedUrl }}">
-@endforeach
+<!-- English alternate link -->
+<link rel="alternate" hreflang="en" href="{{ $enUrl }}">
+
+<!-- French alternate link -->
+<link rel="alternate" hreflang="fr" href="{{ $frUrl }}">
 
 <!-- x-default hreflang for undeclared languages (defaults to EN) -->
-<link rel="alternate" hreflang="x-default" href="{{ LaravelLocalization::getLocalizedURL('en', $currentUrl) }}">
+<link rel="alternate" hreflang="x-default" href="{{ $enUrl }}">

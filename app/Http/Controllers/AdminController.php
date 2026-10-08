@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\UserSignupMail;
 
 
-class Admincontroller extends Controller
+class AdminController extends Controller
 {
     public function index()
     {

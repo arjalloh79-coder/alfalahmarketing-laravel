@@ -20,8 +20,8 @@ Route::post('/github-webhook', function () {
     // Handle webhook
 });
 
-// Define public routes as a closure for reuse
-$publicRoutes = function () {
+// ===== ENGLISH ROUTES (Root, no prefix) =====
+Route::middleware(['web'])->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('home');
     Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
     Route::get('/about-us', [UserController::class, 'about'])->name('about');
@@ -32,7 +32,6 @@ $publicRoutes = function () {
     Route::post('/consultation-store', [ConsultationController::class, 'store'])->name('consultation.store');
     Route::post('/newsletter-subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
-    // Cookie consent endpoints
     Route::post('/consent/accept', [CookieConsentController::class, 'accept'])->name('consent.accept');
     Route::post('/consent/reject', [CookieConsentController::class, 'reject'])->name('consent.reject');
 
@@ -65,15 +64,55 @@ $publicRoutes = function () {
 
     Route::get('/privacy-policies', [UserController::class, 'privacy'])->name('privacy.policy');
     Route::get('/terms-conditions', [UserController::class, 'terms'])->name('terms.conditions');
-};
+});
 
-// English routes at root (no prefix, locale = 'en')
-Route::middleware(['web'])->group($publicRoutes);
+// ===== FRENCH ROUTES (/fr prefix) =====
+Route::prefix('fr')->middleware(['web'])->name('fr.')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('home');
+    Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+    Route::get('/about-us', [UserController::class, 'about'])->name('about');
+    Route::get('/services', [UserController::class, 'service'])->name('service');
+    Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+    Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
+    Route::post('/consultation-store', [ConsultationController::class, 'store'])->name('consultation.store');
+    Route::post('/newsletter-subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
-// French routes at /fr/ (prefix, locale = 'fr')
-Route::prefix('fr')->middleware(['web'])->group($publicRoutes);
+    Route::post('/consent/accept', [CookieConsentController::class, 'accept'])->name('consent.accept');
+    Route::post('/consent/reject', [CookieConsentController::class, 'reject'])->name('consent.reject');
 
-// Admin routes (outside localization)
+    Route::get('/blog', [UserController::class, 'blog'])->name('blog');
+    Route::get('/blog/{slug}', [UserController::class, 'show'])->name('blog.show');
+
+    Route::get('/About-us', fn () => redirect()->route('fr.about', request()->query(), 301));
+    Route::get('/Services', fn () => redirect()->route('fr.service', request()->query(), 301));
+    Route::get('/Blog', fn () => redirect()->route('fr.blog', request()->query(), 301));
+
+    Route::middleware('guest')->group(function () {
+        Route::get('/login', [UserController::class, 'login'])->name('login');
+        Route::post('/login', [UserController::class, 'loginProcess'])->name('login.perform');
+        Route::get('/signup', [UserController::class, 'signup'])->name('signup');
+        Route::post('/signup', [UserController::class, 'signupProcess'])->name('signup.perform');
+    });
+
+    Route::middleware('auth')->group(function () {
+        Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+        Route::get('/dashboard', fn () => view('User.dashboard'))->name('user.dashboard');
+        Route::get('/my-domains', [UserDomainController::class, 'index'])->name('user.domains.index');
+    });
+
+    Route::get('/services/web-development', [UserController::class, 'web'])->name('services.web-development');
+    Route::get('/services/digital-marketing', [UserController::class, 'digital'])->name('services.digital-marketing');
+    Route::get('/services/branding', [UserController::class, 'branding'])->name('services.branding');
+    Route::get('/services/automation', [UserController::class, 'automation'])->name('services.automation');
+    Route::get('/services/content-creation', [UserController::class, 'content'])->name('services.content');
+    Route::get('/services/it-solutions', [UserController::class, 'solution'])->name('services.solution');
+
+    Route::get('/privacy-policies', [UserController::class, 'privacy'])->name('privacy.policy');
+    Route::get('/terms-conditions', [UserController::class, 'terms'])->name('terms.conditions');
+});
+
+// Admin routes (outside localization, no fr. prefix)
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
 

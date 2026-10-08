@@ -50,6 +50,8 @@
                     class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">{{ trans('messages.nav_about') }}</a>
                 <a href="{{ route('service') }}"
                     class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">{{ trans('messages.nav_services') }}</a>
+                <a href="{{ route('pricing') }}"
+                    class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">{{ app()->getLocale() === 'fr' ? 'Tarifs' : 'Pricing' }}</a>
                 <a href="{{ route('portfolio') }}"
                     class="nav-link text-sm font-semibold text-dark hover:text-primary transition-colors duration-200 uppercase tracking-wider">{{ trans('messages.nav_portfolio') }}</a>
                 <a href="{{ route('blog') }}"
@@ -114,6 +116,8 @@
                     class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">{{ trans('messages.nav_about') }}</a>
                 <a href="{{ route('service') }}" onclick="toggleMobileMenu()"
                     class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">{{ trans('messages.nav_services') }}</a>
+                <a href="{{ route('pricing') }}" onclick="toggleMobileMenu()"
+                    class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">{{ app()->getLocale() === 'fr' ? 'Tarifs' : 'Pricing' }}</a>
                 <a href="{{ route('portfolio') }}" onclick="toggleMobileMenu()"
                     class="block py-3 text-lg font-bold text-dark hover:text-primary transition-colors uppercase tracking-wider">{{ trans('messages.nav_portfolio') }}</a>
                 <a href="{{ route('blog') }}" onclick="toggleMobileMenu()"

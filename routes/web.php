@@ -14,6 +14,7 @@ use App\Http\Controllers\User\UserDomainController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\CookieConsentController;
+use App\Http\Controllers\PricingController;
 
 Route::post('/github-webhook', function () {});
 
@@ -55,6 +56,8 @@ Route::get('/privacy-policies', [UserController::class, 'privacy'])->name('priva
 Route::get('/terms-conditions', [UserController::class, 'terms'])->name('terms.conditions');
 Route::get('/free-audit', [UserController::class, 'freeAudit'])->name('free-audit');
 Route::post('/free-audit-submit', [ContactController::class, 'storeAudit'])->name('free-audit.store');
+Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
+Route::post('/pricing/set-currency', [PricingController::class, 'setCurrency'])->name('pricing.set-currency');
 
 // French routes (/fr prefix) with different names
 Route::prefix('fr')->group(function () {
@@ -95,6 +98,8 @@ Route::prefix('fr')->group(function () {
     Route::get('/terms-conditions', [UserController::class, 'terms'])->name('fr_terms.conditions');
     Route::get('/audit-gratuit', [UserController::class, 'freeAudit'])->name('fr_free-audit');
     Route::post('/audit-gratuit-submit', [ContactController::class, 'storeAudit'])->name('fr_free-audit.store');
+    Route::get('/tarifs', [PricingController::class, 'index'])->name('fr_pricing');
+    Route::post('/tarifs/set-currency', [PricingController::class, 'setCurrency'])->name('fr_pricing.set-currency');
 });
 
 // Admin routes

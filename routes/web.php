@@ -53,6 +53,8 @@ Route::get('/services/content-creation', [UserController::class, 'content'])->na
 Route::get('/services/it-solutions', [UserController::class, 'solution'])->name('services.solution');
 Route::get('/privacy-policies', [UserController::class, 'privacy'])->name('privacy.policy');
 Route::get('/terms-conditions', [UserController::class, 'terms'])->name('terms.conditions');
+Route::get('/free-audit', [UserController::class, 'freeAudit'])->name('free-audit');
+Route::post('/free-audit-submit', [ContactController::class, 'storeAudit'])->name('free-audit.store');
 
 // French routes (/fr prefix) with different names
 Route::prefix('fr')->group(function () {
@@ -91,6 +93,8 @@ Route::prefix('fr')->group(function () {
     Route::get('/services/it-solutions', [UserController::class, 'solution'])->name('fr_services.solution');
     Route::get('/privacy-policies', [UserController::class, 'privacy'])->name('fr_privacy.policy');
     Route::get('/terms-conditions', [UserController::class, 'terms'])->name('fr_terms.conditions');
+    Route::get('/audit-gratuit', [UserController::class, 'freeAudit'])->name('fr_free-audit');
+    Route::post('/audit-gratuit-submit', [ContactController::class, 'storeAudit'])->name('fr_free-audit.store');
 });
 
 // Admin routes

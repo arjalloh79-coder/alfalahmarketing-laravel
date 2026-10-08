@@ -155,4 +155,9 @@ public function show($slug) {
     {
         return view('User.terms-conditions');
     }
+
+    public function freeAudit()
+    {
+        return view('User.free-audit');
+    }
 }

@@ -52,4 +52,37 @@ class ContactController extends Controller
             ->with('success', 'Thank you! Your message has been sent.')
             ->with('tracking_event', $trackingEvent);
     }
+
+    public function storeAudit(Request $request)
+    {
+        // Spam protection
+        if (! SpamProtection::validate($request)) {
+            return back()->with('success', 'Thank you! We\'ve received your request.');
+        }
+
+        // Validate
+        $validated = $request->validate([
+            'business_name' => 'required|string|max:100',
+            'website_url'   => 'required|url|max:255',
+            'whatsapp'      => 'required|string|max:20',
+            'country'       => 'required|string|max:50',
+        ]);
+
+        // Store in database (reuse Contact model for now)
+        Contact::create([
+            'first_name' => $validated['business_name'],
+            'email' => 'audit-request', // Placeholder
+            'phone' => $validated['whatsapp'],
+            'service_interest' => 'Free Audit - ' . $validated['country'],
+            'message' => 'Website: ' . $validated['website_url'],
+        ]);
+
+        // Fire tracking event
+        \App\Support\Tracking::fireEvent('generate_lead', [
+            'value' => 1,
+            'currency' => 'USD',
+        ]);
+
+        return back()->with('success', 'Thank you! We\'ve received your request. Check your WhatsApp for our response.');
+    }
 }

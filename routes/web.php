@@ -32,9 +32,9 @@ Route::post('/consent/accept', [CookieConsentController::class, 'accept'])->name
 Route::post('/consent/reject', [CookieConsentController::class, 'reject'])->name('consent.reject');
 Route::get('/blog', [UserController::class, 'blog'])->name('blog');
 Route::get('/blog/{slug}', [UserController::class, 'show'])->name('blog.show');
-Route::get('/About-us', fn () => redirect()->route('home.about', request()->query(), 301));
-Route::get('/Services', fn () => redirect()->route('home.service', request()->query(), 301));
-Route::get('/Blog', fn () => redirect()->route('home.blog', request()->query(), 301));
+Route::get('/About-us', fn () => redirect()->route('about', request()->query(), 301))->name('home.about');
+Route::get('/Services', fn () => redirect()->route('service', request()->query(), 301))->name('home.service');
+Route::get('/Blog', fn () => redirect()->route('blog', request()->query(), 301))->name('home.blog');
 Route::middleware('guest')->group(function () {
     Route::get('/login', [UserController::class, 'login'])->name('login');
     Route::post('/login', [UserController::class, 'loginProcess'])->name('login.perform');
@@ -74,9 +74,9 @@ Route::prefix('fr')->group(function () {
     Route::post('/consent/reject', [CookieConsentController::class, 'reject'])->name('fr_consent.reject');
     Route::get('/blog', [UserController::class, 'blog'])->name('fr_blog');
     Route::get('/blog/{slug}', [UserController::class, 'show'])->name('fr_blog.show');
-    Route::get('/About-us', fn () => redirect()->route('fr_about', request()->query(), 301));
-    Route::get('/Services', fn () => redirect()->route('fr_service', request()->query(), 301));
-    Route::get('/Blog', fn () => redirect()->route('fr_blog', request()->query(), 301));
+    Route::get('/About-us', fn () => redirect()->route('fr_about', request()->query(), 301))->name('fr_home.about');
+    Route::get('/Services', fn () => redirect()->route('fr_service', request()->query(), 301))->name('fr_home.service');
+    Route::get('/Blog', fn () => redirect()->route('fr_blog', request()->query(), 301))->name('fr_home.blog');
     Route::middleware('guest')->group(function () {
         Route::get('/login', [UserController::class, 'login'])->name('fr_login');
         Route::post('/login', [UserController::class, 'loginProcess'])->name('fr_login.perform');

@@ -6,7 +6,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
 
 use App\Http\Middleware\SecurityHeaders;
-use App\Http\Middleware\SetLocale;
+use App\Http\Middleware\HandleLocalization;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -19,9 +19,6 @@ return Application::configure(basePath: dirname(__DIR__))
         // Register middleware aliases
         $middleware->alias([
             'admin' => \App\Http\Middleware\IsAdmin::class,
-            'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationMiddlewareBase::class,
-            'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
-            'localizeRedirectFilter' => \Mcamara\LaravelLocalization\Middleware\LocalizeRedirectFilter::class,
         ]);
 
         // Exclude GitHub webhook from CSRF validation
@@ -29,9 +26,9 @@ return Application::configure(basePath: dirname(__DIR__))
             '/github-webhook',
         ]);
 
-        // Apply SetLocale middleware to all web routes
+        // Apply localization and security headers to all web routes
         $middleware->web(append: [
-            SetLocale::class,
+            HandleLocalization::class,
             SecurityHeaders::class,
         ]);
     })

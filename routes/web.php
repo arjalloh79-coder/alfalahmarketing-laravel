@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
@@ -15,65 +14,66 @@ use App\Http\Controllers\User\UserDomainController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\CookieConsentController;
-use App\Http\Controllers\WebhookController;
 
 // GitHub webhook (CSRF exempt via bootstrap/app.php)
-Route::post('/github-webhook', [WebhookController::class, 'handle']);
+Route::post('/github-webhook', function () {
+    // Handle webhook
+});
 
-// All public-facing routes wrapped in localization group: EN at /, FR at /fr/
-Route::group(
-    [
-        'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['localize', 'localeSessionRedirect', 'localizeRedirectFilter']
-    ],
-    function () {
-        Route::get('/', [UserController::class, 'index'])->name('home');
-        Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
-        Route::get('/about-us', [UserController::class, 'about'])->name('about');
-        Route::get('/services', [UserController::class, 'service'])->name('service');
-        Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
-        Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-        Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
-        Route::post('/consultation-store', [ConsultationController::class, 'store'])->name('consultation.store');
-        Route::post('/newsletter-subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+// Define public routes as a closure for reuse
+$publicRoutes = function () {
+    Route::get('/', [UserController::class, 'index'])->name('home');
+    Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+    Route::get('/about-us', [UserController::class, 'about'])->name('about');
+    Route::get('/services', [UserController::class, 'service'])->name('service');
+    Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+    Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.store');
+    Route::post('/consultation-store', [ConsultationController::class, 'store'])->name('consultation.store');
+    Route::post('/newsletter-subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
-        // Cookie consent endpoints
-        Route::post('/consent/accept', [CookieConsentController::class, 'accept'])->name('consent.accept');
-        Route::post('/consent/reject', [CookieConsentController::class, 'reject'])->name('consent.reject');
+    // Cookie consent endpoints
+    Route::post('/consent/accept', [CookieConsentController::class, 'accept'])->name('consent.accept');
+    Route::post('/consent/reject', [CookieConsentController::class, 'reject'])->name('consent.reject');
 
-        Route::get('/blog', [UserController::class, 'blog'])->name('blog');
-        Route::get('/blog/{slug}', [UserController::class, 'show'])->name('blog.show');
+    Route::get('/blog', [UserController::class, 'blog'])->name('blog');
+    Route::get('/blog/{slug}', [UserController::class, 'show'])->name('blog.show');
 
-        Route::get('/About-us', fn () => redirect()->route('about', request()->query(), 301));
-        Route::get('/Services', fn () => redirect()->route('service', request()->query(), 301));
-        Route::get('/Blog', fn () => redirect()->route('blog', request()->query(), 301));
+    Route::get('/About-us', fn () => redirect()->route('about', request()->query(), 301));
+    Route::get('/Services', fn () => redirect()->route('service', request()->query(), 301));
+    Route::get('/Blog', fn () => redirect()->route('blog', request()->query(), 301));
 
-        Route::middleware('guest')->group(function () {
-            Route::get('/login', [UserController::class, 'login'])->name('login');
-            Route::post('/login', [UserController::class, 'loginProcess'])->name('login.perform');
-            Route::get('/signup', [UserController::class, 'signup'])->name('signup');
-            Route::post('/signup', [UserController::class, 'signupProcess'])->name('signup.perform');
-        });
+    Route::middleware('guest')->group(function () {
+        Route::get('/login', [UserController::class, 'login'])->name('login');
+        Route::post('/login', [UserController::class, 'loginProcess'])->name('login.perform');
+        Route::get('/signup', [UserController::class, 'signup'])->name('signup');
+        Route::post('/signup', [UserController::class, 'signupProcess'])->name('signup.perform');
+    });
 
-        Route::middleware('auth')->group(function () {
-            Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-            Route::get('/dashboard', fn () => view('User.dashboard'))->name('user.dashboard');
-            Route::get('/my-domains', [UserDomainController::class, 'index'])->name('user.domains.index');
-        });
+    Route::middleware('auth')->group(function () {
+        Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+        Route::get('/dashboard', fn () => view('User.dashboard'))->name('user.dashboard');
+        Route::get('/my-domains', [UserDomainController::class, 'index'])->name('user.domains.index');
+    });
 
-        Route::get('/services/web-development', [UserController::class, 'web'])->name('services.web-development');
-        Route::get('/services/digital-marketing', [UserController::class, 'digital'])->name('services.digital-marketing');
-        Route::get('/services/branding', [UserController::class, 'branding'])->name('services.branding');
-        Route::get('/services/automation', [UserController::class, 'automation'])->name('services.automation');
-        Route::get('/services/content-creation', [UserController::class, 'content'])->name('services.content');
-        Route::get('/services/it-solutions', [UserController::class, 'solution'])->name('services.solution');
+    Route::get('/services/web-development', [UserController::class, 'web'])->name('services.web-development');
+    Route::get('/services/digital-marketing', [UserController::class, 'digital'])->name('services.digital-marketing');
+    Route::get('/services/branding', [UserController::class, 'branding'])->name('services.branding');
+    Route::get('/services/automation', [UserController::class, 'automation'])->name('services.automation');
+    Route::get('/services/content-creation', [UserController::class, 'content'])->name('services.content');
+    Route::get('/services/it-solutions', [UserController::class, 'solution'])->name('services.solution');
 
-        Route::get('/privacy-policies', [UserController::class, 'privacy'])->name('privacy.policy');
-        Route::get('/terms-conditions', [UserController::class, 'terms'])->name('terms.conditions');
-    }
-);
+    Route::get('/privacy-policies', [UserController::class, 'privacy'])->name('privacy.policy');
+    Route::get('/terms-conditions', [UserController::class, 'terms'])->name('terms.conditions');
+};
 
-// All administrative operations must require both authentication and the admin role.
+// English routes at root (no prefix, locale = 'en')
+Route::middleware(['web'])->group($publicRoutes);
+
+// French routes at /fr/ (prefix, locale = 'fr')
+Route::prefix('fr')->middleware(['web'])->group($publicRoutes);
+
+// Admin routes (outside localization)
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
 
@@ -109,7 +109,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::post('/newsletter/bulk-delete', [NewsletterController::class, 'bulkDelete'])->name('newsletter.bulk-delete');
 });
 
-// Language switch helper (outside localization group)
+// Language switch helper
 Route::get('/language/{locale}', function (string $locale) {
     abort_unless(in_array($locale, ['en', 'fr'], true), 404);
     Session::put('locale', $locale);

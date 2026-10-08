@@ -19,6 +19,9 @@ return Application::configure(basePath: dirname(__DIR__))
         // Register middleware aliases
         $middleware->alias([
             'admin' => \App\Http\Middleware\IsAdmin::class,
+            'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationMiddlewareBase::class,
+            'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
+            'localizeRedirectFilter' => \Mcamara\LaravelLocalization\Middleware\LocalizeRedirectFilter::class,
         ]);
 
         // Exclude GitHub webhook from CSRF validation

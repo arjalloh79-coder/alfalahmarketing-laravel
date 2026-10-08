@@ -1,26 +1,27 @@
 <!-- Hreflang Alternates for Multilingual SEO -->
 @php
+    $root = request()->root();
     $currentPath = request()->path();
 
     // Generate correct URLs for both languages
     if (str_starts_with($currentPath, 'fr/')) {
         // Currently on /fr/something
-        $enUrl = url('/' . substr($currentPath, 3));
-        $frUrl = url('/' . $currentPath);
+        $enUrl = $root . '/' . substr($currentPath, 3);
+        $frUrl = $root . '/' . $currentPath;
     } elseif ($currentPath === 'fr') {
         // Currently on /fr root
-        $enUrl = url('/');
-        $frUrl = url('/fr');
+        $enUrl = $root;
+        $frUrl = $root . '/fr';
     } else {
         // Currently on EN path (including root /)
         if ($currentPath === '') {
             // Root homepage
-            $enUrl = url('/');
-            $frUrl = url('/fr');
+            $enUrl = $root;
+            $frUrl = $root . '/fr';
         } else {
             // Other EN pages
-            $enUrl = url('/' . $currentPath);
-            $frUrl = url('/fr/' . ltrim($currentPath, '/'));
+            $enUrl = $root . '/' . $currentPath;
+            $frUrl = $root . '/fr/' . ltrim($currentPath, '/');
         }
     }
 @endphp

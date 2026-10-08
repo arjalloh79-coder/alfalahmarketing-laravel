@@ -12,9 +12,16 @@
         $enUrl = url('/');
         $frUrl = url('/fr');
     } else {
-        // Currently on EN path
-        $enUrl = url('/' . $currentPath);
-        $frUrl = $currentPath === '' ? url('/fr') : url('/fr/' . ltrim($currentPath, '/'));
+        // Currently on EN path (including root /)
+        if ($currentPath === '') {
+            // Root homepage
+            $enUrl = url('/');
+            $frUrl = url('/fr');
+        } else {
+            // Other EN pages
+            $enUrl = url('/' . $currentPath);
+            $frUrl = url('/fr/' . ltrim($currentPath, '/'));
+        }
     }
 @endphp
 

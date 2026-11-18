@@ -160,4 +160,9 @@ public function show($slug) {
     {
         return view('User.free-audit');
     }
+
+    public function scorecard()
+    {
+        return view('User.scorecard');
+    }
 }
